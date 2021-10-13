@@ -25,7 +25,9 @@
     <link href="css/sequence-theme.modern-slide-in.css" rel="stylesheet" media="all">
 
     <!-- Main style sheet -->
-    <link href="css/style.css" rel="stylesheet">    
+    <link href="css/style.css" rel="stylesheet"> 
+    <!-- QUIZ style sheet -->
+    <link href="css/quizstyle.css" rel="stylesheet">    
 
     <!-- Google Font -->
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
@@ -41,7 +43,7 @@
   
 
   </head>
-  <body> 
+  <body onload="setup()"> 
    <!-- wpf loader Two -->
     <div id="wpf-loader-two">          
       <div class="wpf-loader-two-inner">
@@ -220,9 +222,25 @@
   <!-- / menu -->
 
   <!-- Skincare content -->
-  <section>
-
-  
+  <section id="quiz">
+    <div class="container">
+      <div class="row">
+        <div class="box">
+          <h1 id="questionNo">
+            Skincare Quiz!
+          </h1>
+          <p id="question">
+            What is your skin type?
+          </p>
+          <input type="button" type="submit" value="Acne-prone" class="btn btn-danger">
+          <input type="button" type="submit" value="Oily" class="btn btn-danger">
+          <input type="button" type="submit" value="Sensitive" class="btn btn-danger">
+          <input type="button" type="submit" value="Dry" class="btn btn-danger">
+          <input type="button" type="submit" value="Combination" class="btn btn-danger">
+        </div>
+        <input type="button" type = "submit" value="Next" class="btn">
+      </div>
+    </div>
   </section>
   <!-- /Skincare content -->
 
@@ -345,6 +363,7 @@
   </div>    
 
   <!-- jQuery library -->
+  <script src="js/skincareQuiz.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="js/bootstrap.js"></script>  

@@ -1,0 +1,14 @@
+.box{
+    padding: 10px;
+    width: auto;
+    border-radius: 10px;
+    -webkit-box-shadow:-1px 8px 15px 0px rgba(0,0,0,0.5);
+    -moz-shadow:-1px 8px 15px 0px rgba(0,0,0,0.5);
+    box-shadow: -1px 8px 15px 0px rgba(0,0,0,0.5);
+    
+  }
+#quiz{
+    display: inline;
+    float: left;
+    width: 100%;
+}
