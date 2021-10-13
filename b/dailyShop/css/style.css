@@ -44,6 +44,7 @@ body {
   overflow-x: hidden;
 }
 
+
 .no-padding {
   padding: 0;
 }
@@ -1758,7 +1759,7 @@ img {
 #aa-catg-head-banner {
   display: inline;
   float: left;
-  position: relative;
+  position: relative; 
   width: 100%;
 }
 #aa-catg-head-banner .aa-catg-head-banner-area {
