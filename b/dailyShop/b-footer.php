@@ -11,10 +11,10 @@
                 <div class="aa-footer-widget">
                   <h3>Main Menu</h3>
                   <ul class="aa-footer-nav">
-                    <li><a href="b-index.html">Home</a></li>
-                    <li><a href="b-ourservices.html">Our Services</a></li>
-                    <li><a href="b-aboutus.html">About Us</a></li>
-                    <li><a href="b-contactus.html">Contact Us</a></li>
+                    <li><a href="b-index.php">Home</a></li>
+                    <li><a href="b-ourservices.php">Our Services</a></li>
+                    <li><a href="b-aboutus.php">About Us</a></li>
+                    <li><a href="b-contactus.php">Contact Us</a></li>
                   </ul>
                 </div>
               </div>
@@ -23,11 +23,11 @@
                   <div class="aa-footer-widget">
                     <h3>More Information</h3>
                     <ul class="aa-footer-nav">
-                      <li><a href="b-information-delivery.html">Delivery</a></li>
-                      <li><a href="b-information-returns.html">Returns</a></li>
-                      <li><a href="b-information-services.html">Services</a></li>
-                      <li><a href="b-faq.html">FAQ</a></li>
-                      <li><a href="b-information-supplier.html">Suppliers</a></li>
+                      <li><a href="b-information-delivery.php">Delivery</a></li>
+                      <li><a href="b-information-returns.php">Returns</a></li>
+                      <li><a href="b-information-services.php">Services</a></li>
+                      <li><a href="b-faq.php">FAQ</a></li>
+                      <li><a href="b-information-supplier.php">Suppliers</a></li>
                     </ul>
                   </div>
                 </div>
@@ -95,7 +95,7 @@
             <label for="rememberme" class="rememberme"><input type="checkbox" id="rememberme"> Remember me </label>
             <p class="aa-lost-password"><a href="">Lost your password?</a></p>
             <div class="aa-register-now">
-              Don't have an account?<a href="b-register.html">Register now!</a>
+              Don't have an account?<a href="b-register.php">Register now!</a>
             </div>
           </form>
         </div>                        

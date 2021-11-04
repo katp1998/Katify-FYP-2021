@@ -65,8 +65,8 @@
               <!-- / header top left -->
               <div class="aa-header-top-right">
                 <ul class="aa-head-top-nav-right">
-                  <li><a href="b-login.html" data-toggle="modal" data-target="#login-modal">Login</a></li>
-                  <li><a href="b-account.html">My Account</a></li>
+                  <li><a href="b-login.php" data-toggle="modal" data-target="#login-modal">Login</a></li>
+                  <li><a href="b-account.php">My Account</a></li>
                 </ul>
               </div>
             </div>
@@ -168,13 +168,13 @@
               <li><a href="b-index.html">HOME</a></li>
               <li><a href="#">SHOP<span class="caret"></span></a>
                 <ul class="dropdown-menu">  
-                  <li><a href="b-skincare.html">SKIN CARE</a></li>                                                                
-                  <li><a href="b-haircare.html">HAIR CARE</a></li>              
-                  <li><a href="b-fragrance.html">FRAGRANCE</a></li>
-                  <li><a href="b-cosmetics.html">COSMETICS</a></li>
-                  <li><a href="b-beautytools.html">BEAUTY TOOLS</a></li>                
-                  <li><a href="b-mens.html">MEN'S GROOMING</a></li>
-                  <li><a href="b-oralcare.html">ORAL CARE</a></li>
+                  <li><a href="b-skincare.php">SKIN CARE</a></li>                                                                
+                  <li><a href="b-haircare.php">HAIR CARE</a></li>              
+                  <li><a href="b-fragrance.php">FRAGRANCE</a></li>
+                  <li><a href="b-cosmetics.php">COSMETICS</a></li>
+                  <li><a href="b-beautytools.php">BEAUTY TOOLS</a></li>                
+                  <li><a href="b-mens.php">MEN'S GROOMING</a></li>
+                  <li><a href="b-oralcare.php">ORAL CARE</a></li>
                   <!-- these are additional ways to add nested lists // commented for reference
                   <li><a href="#">And more.. <span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -209,8 +209,8 @@
                   </li> -->
                 </ul>
               </li>
-              <li><a href="b-personalize.html">PERSONALIZE!</a></li>
-              <li><a href="b-aboutus.html">CONTACT US</a></li>
+              <li><a href="b-personalize.php">PERSONALIZE!</a></li>
+              <li><a href="b-aboutus.php">CONTACT US</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
