@@ -45,7 +45,18 @@ CREATE TABLE `seller`(
 );
 CREATE TABLE `order`(
     `o_id` int(10) PRIMARY KEY,
-    `s_firstname` varchar(50) NOT NULL,
+    `o_onwer_id` varchar(50) NOT NULL FOREIGN KEY REFERENCES buyer(b_id),
+    `o_shopname` varchar(50) NOT NULL FOREIGN KEY REFERENCES seller(s_shopname),
+    `o_date` datetime NOT NULL,
+    `s_address` int(200) NOT NULL,
+    `s_nic` varchar(10) NOT NULL,
+    `s_email` varchar(50) NOT NULL,
+    `s_shopname` varchar(20) NOT NULL,
+    `s_password` varchar(20) NOT NULL
+);
+CREATE TABLE `order`(
+    `o_id` int(10) PRIMARY KEY,
+    `o_onwer_id` varchar(50) NOT NULL,
     `s_lastname` varchar(50) NOT NULL,
     `s_contact` int(10) NOT NULL,
     `s_address` int(200) NOT NULL,
@@ -54,4 +65,5 @@ CREATE TABLE `order`(
     `s_shopname` varchar(20) NOT NULL,
     `s_password` varchar(20) NOT NULL
 );
+
 
