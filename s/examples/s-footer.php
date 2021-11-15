@@ -15,12 +15,12 @@
                 </a>
               </li>
               <li>
-                <a href="http://blog.creative-tim.com">
+                <a href="">
                   Blog
                 </a>
               </li>
               <li>
-                <a href="https://www.creative-tim.com/license">
+                <a href="">
                   Licenses
                 </a>
               </li>
