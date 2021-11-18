@@ -235,3 +235,13 @@ demo = {
   }
 
 }
+
+var prodCat = document.getElementById('productCat');
+var prodCatName = prodCat.options[prodCat.selectedIndex].text;
+var fragranceForm = document.getElementById('fragranceForm');
+var basic = document.getElementById('basic');
+
+basic.style.display = 'block';
+if (prodCatName == 'Fragrance'){
+    fragranceForm.style.display = 'block';
+}

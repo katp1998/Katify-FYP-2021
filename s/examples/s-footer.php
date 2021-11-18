@@ -148,6 +148,7 @@
   <script src="../assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
+  <script src="../assets/demo/productform.js"></script>
   <script>
     $(document).ready(function() {
       $().ready(function() {

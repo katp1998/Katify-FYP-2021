@@ -653,258 +653,959 @@
                       </tbody>
                     </table>
                     </div>
-                    <div class="tab-pane" id="addproduct">
-                      <div class="justify-content-center">
-                    <form class="form-horizontal">
-                    <fieldset>
-
-                        <!-- Text input-->
-                        <div class="form-group">
-                          <label class="col-md control-label" for="product_id">Product Name</label>  
-                          <div class="col-md">
-                          <input id="product_id" name="product_id" placeholder="Enter product name" class="form-control" required="" type="text">
+                    <div class="tab-pane" id="addproduct">   
+                      <form id="productForm" action="">
+                        <div id="basic">
+                          <div class="form-group"><h2>Basic Product Information</h2></div>
+                          <div class="form-group">
+                            <label for="productname">PRODUCT NAME: </label>
+                            <input class="form-control" type="text" id="productname" placeholder=>
                           </div>
-                        </div>
-
-                        <!-- Text input-->
-                        <div class="form-group">
-                          <label class="col-md control-label" for="product_name_fr">Product Description</label>  
-                          <div class="col-md">
-                          <textarea id="product_name_fr" name="product_name_fr" placeholder="Enter Product Description" class="form-control" required="" type="text"></textarea>
-                            
+                          <div class="form-group">
+                            <label for="productdescription">PRODUCT DESCRIPTION: </label>
+                            <textarea class="form-control" name="productdescription" id="productdescription" rows="10"></textarea>
                           </div>
-                        </div>
-
-                        <!-- Select Basic -->
-                        
                           <div class="row">
-                            <div class="col-sm">
+                            <div class="col">
                               <div class="form-group">
-                                <label for="trgtuser">Target user: </label>
-                                  <label for="trgtuser" class="radio-inline">
-                                    <input type="radio">Male
-                                  </label>
-                                  <label for="trgtuser" class="radio-inline">
-                                    <input type="radio">Female
-                                  </label>
-                                  <label for="trgtuser" class="inline">
-                                    <input type="radio">Common
-                                  </label>
-                                </div>
-                              </div>
-                              <div class="col-sm">
-                                <label for="category">Category</label>
-                                <button class="btn btn-primary btn-sm" data-toggle="dropdown"></button>
+                                <label for="productCat">PRODUCT CATEGORY</label>
+                                <select class="form-control" data-style="btn btn-sm btn-primary btn-link" id="productCat">
+                                  <option id="fragranceOpt">Fragrance</option>
+                                  <option id="skincareOpt">Skincare</option>
+                                  <option id="haircareOpt">Haircare</option>
+                                  <option id="cosmeticsOpt">Cosmetics</option>
+                                  <option id="beautyToolsOpt">Beauty Tools</option>
+                                </select>
                               </div>
                             </div>
-                          <label class="col-md control-label" for="product_categorie">PRODUCT CATEGORY</label>
-                          <div class="col-md">
-                            <select id="product_categorie" name="product_categorie" class="form-control">
-                            </select>
+                            <div class="col">
+                              <div class="form-group">
+                                <div><label for="productdescription">GENDER:</label></div>
+                                  <div class="form-check form-check-radio form-check-inline">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="gender" id="male" value="make"> Male
+                                    <span class="circle">
+                                      <span class="check"></span>
+                                    </span>
+                                    </label>
+                                  </div>
+                                  <div class="form-check form-check-radio form-check-inline">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="gender" id="female" value="female"> Female
+                                    <span class="circle">
+                                      <span class="check"></span>
+                                    </span>
+                                    </label>
+                                  </div>
+                                  <div class="form-check form-check-radio form-check-inline">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="gender" id="both" value="both"> both
+                                    <span class="circle">
+                                      <span class="check"></span>
+                                    </span>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-group">
+                                <label for="productbrand">PRODUCT BRAND: </label>
+                                <input class="form-control" name="productbrand"type="text">
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group">
+                                <label for="stock">STOCKS AVAILABLE: </label>
+                                <input class="form-control" name="stock"type="text" >
+                              </div>
+                            </div>
                           </div>
                         </div>
-
-                        <!-- Text input-->
-                        <div class="form-group">
-                          <label class="col-md control-label" for="available_quantity">AVAILABLE QUANTITY</label>  
-                          <div class="col-md">
-                          <input id="available_quantity" name="available_quantity" placeholder="AVAILABLE QUANTITY" class="form-control" required="" type="text">
-                            
+                        <div id="fragranceForm">
+                          <div class="form-group"><h2>Fragrance: Product Specific Information</h2></div>
+                            <div class="form-group">
+                              <label for="fragranceCat">FRAGRANCE CATEGORY</label>
+                              <select class="form-control" data-style="btn btn-sm btn-primary btn-link" id="exampleFormControlSelect1">
+                                <option>Fragrance Mist</option>
+                                <option>Eau De Parfum (EDP)</option>
+                                <option>Eau De Toilette (EDT)</option>
+                                <option>Cologne</option>
+                                <option>Other</option>
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <label for="productvolume">PRODUCT CONTENT VOLUME (ml): </label>
+                              <input class="form-control" name="productvolume"type="text">
+                            </div>
+                            <div class="form-group">
+                              <label for="fragnotes">FRAGRANCE NOTES: </label>
+                              <div class="row">
+                                <div class="col">
+                                  <div class="form-group">
+                                    <label for="floralchecks">FLORAL</label>
+                                  </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="">Floral Fruity
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="">Classic Floral
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="">Powdery Floral (Iris/Violet)
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="">Warm Floral (Vanilla)
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col">
+                                  <div class="form-group">
+                                    <label for="freshchecks">FRESH</label>
+                                  </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="">Citrus
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="">Aquatics
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="">Fresh Florals (Lillies/Honeysuckle)
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col">
+                                  <div class="form-group">
+                                    <label for="warmchecks">WARM & SPICY</label>
+                                  </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="">Warm and Sweet
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="">Vanilla and Coffee
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="">Cool Spices (Bergamont/Nutmeg)
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="">Oud/Leather
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col">
+                                  <div class="form-group">
+                                    <label for="woodychecks">WOODY & EARTH</label>
+                                  </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="">Warm Woods (Sandalwood/Pine)
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="">Classic Woods (Moss/Cedar)
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="">Earth Greens (Herbs/Fresh cut grass)
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="">Citrus Wood (Bergamont/Vertiver)
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                            </div>
+                            <div class="form-group">
+                            <label for="images">PRODUCT IMAGES: </label>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-group form-file-upload form-file-multiple">
+                                <input type="file" multiple="" class="inputFileHidden">
+                                <div class="input-group">
+                                    <input type="text" class="form-control inputFileVisible" placeholder="Add Main Image">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-fab btn-round btn-primary">
+                                            <i class="material-icons">attach_file</i>
+                                        </button>
+                                    </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group form-file-upload form-file-multiple">
+                                <input type="file" multiple="" class="inputFileHidden">
+                                <div class="input-group">
+                                    <input type="text" class="form-control inputFileVisible" placeholder="Add image 1">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-fab btn-round btn-primary">
+                                            <i class="material-icons">attach_file</i>
+                                        </button>
+                                    </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group form-file-upload form-file-multiple">
+                                <input type="file" multiple="" class="inputFileHidden">
+                                <div class="input-group">
+                                    <input type="text" class="form-control inputFileVisible" placeholder="Add image 2">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-fab btn-round btn-primary">
+                                            <i class="material-icons">attach_file</i>
+                                        </button>
+                                    </span>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
-
-                        <!-- Text input-->
-                        <div class="form-group">
-                          <label class="col-md control-label" for="product_weight">PRODUCT WEIGHT</label>  
-                          <div class="col-md">
-                          <input id="product_weight" name="product_weight" placeholder="PRODUCT WEIGHT" class="form-control" required="" type="text">
-                            
-                          </div>
-                        </div>
-
-                        <!-- Textarea -->
-                        <div class="form-group">
-                          <label class="col-md control-label" for="product_description">PRODUCT DESCRIPTION</label>
-                          <div class="col-md">                     
-                            <textarea class="form-control" id="product_description" name="product_description"></textarea>
-                          </div>
-                        </div>
-
-                        <!-- Text input-->
-                        <div class="form-group">
-                          <label class="col-md control-label" for="percentage_discount">PERCENTAGE DISCOUNT</label>  
-                          <div class="col-md">
-                          <input id="percentage_discount" name="percentage_discount" placeholder="PERCENTAGE DISCOUNT" class="form-control" required="" type="text">
-                            
-                          </div>
-                        </div>
-
-                        <!-- Search input-->
-                        <div class="form-group">
-                          <label class="col-md control-label" for="stock_critical">STOCK CRITICAL</label>
-                          <div class="col-md">
-                            <input id="stock_critical" name="stock_critical" placeholder="STOCK CRITICAL" class="form-control" required="" type="search">
-                            
-                          </div>
-                        </div>
-
-
-                        <!-- Text input-->
-                        <div class="form-group">
-                          <label class="col-md control-label" for="online_date">ONLINE DATE</label>  
-                          <div class="col-md">
-                          <input id="online_date" name="online_date" placeholder="ONLINE DATE" class="form-control" required="" type="text">
-                            
-                          </div>
-                        </div>
-
-                        <!-- Text input-->
-                        <div class="form-group">
-                          <label class="col-md control-label" for="author">AUTHOR</label>  
-                          <div class="col-md">
-                          <input id="author" name="author" placeholder="AUTHOR" class="form-control" required="" type="text">
-                            
-                          </div>
-                        </div>
-
-                        <!-- Text input-->
-                        <div class="form-group">
-                          <label class="col-md control-label" for="enable_display">ENABLE DISPLAY</label>  
-                          <div class="col-md">
-                          <input id="enable_display" name="enable_display" placeholder="ENABLE DISPLAY" class="form-control" required="" type="text">
-                            
-                          </div>
-                        </div>
-
-                        <!-- Text input-->
-                        <div class="form-group">
-                          <label class="control-label" for="comment">COMMENT</label>  
-                          <div class="col">
-                          <input id="comment" name="comment" placeholder="COMMENT" class="form-control" required="" type="text">
-                            
-                          </div>
-                        </div>
-
-                        <!-- Text input-->
-                        <div class="form-group">
-                          <label class="control-label" for="approuved_by">APPROUVED BY</label>  
-                          <div class="col">
-                          <input id="approuved_by" name="approuved_by" placeholder="APPROUVED BY" class="form-control " required="" type="text">
-                            
-                        <!-- File Button --> 
-                        <div class="form-group">
-                          <label class="control-label" for="filebutton">main_image</label>
-                          <div class="col">
-                            <input id="filebutton" name="filebutton" class="input-file" type="file">
-                          </div>
-                        </div>
-                        <!-- File Button --> 
-                        <div class="form-group">
-                          <label class="control-label" for="filebutton">auxiliary_images</label>
-                          <div class="col">
-                            <input id="filebutton" name="filebutton" class="input-file" type="file">
-                          </div>
-                        </div>
-
-                        <!-- Button -->
-                        <div class="form-group">
-                          <label class="control-label" for="singlebutton">Single Button</label>
-                          <div class="col">
-                            <button id="singlebutton" name="singlebutton" class="btn btn-primary">Button</button>
-                          </div>
-                          </div>
-
-                        </fieldset>
-</div>
-                      <!--
-                    <div class="form-group">
-                      <label for="productname">Product Name</label>
-                      <input type="text" class="form-control" id="productname">
-                    </div>
-                    <div class="row">
-                      <div class="col-md-5">
-                      <div class="form-group">
-                      <label for="productcategories">Product Category</label>
-                      <select name="productcategories" class="btn btn-primary btn-sm dropdown-toggle" id="productcategories" type="button" data-toggle="dropdown">
-                        <option value="skincare">Skincare</option>
-                        <option value="haircare">Haircare</option>
-                        <option value="fragrance">Fragrance</option>
-                        <option value="tools">Beauty tools</option>
-                        <option value="cosmetics">Cosmetics</option>
-                        <option value="mens">men's grooming</option>
-                        <option value="oralcare">oral care</option>
-                      </select>
-                    </div>
-                      </div>
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label for="targetuser">User Category</label>
-                          <div class="d-inline">
-                          <input type="radio" class="radio-inline" value="male" id="male" name="for">
-                          <label for="male">Male</label>
-                          <input type="radio" class="radio-inline" value="female" id="female" name="for">
-                          <label for="female">Female</label>
-                          <input type="radio" class="radio-inline" value="both" id="both" name="for">
-                          <label for="both">Both</label>
-                        </div>
-                        </div>
-                      </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Fist Name</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Last Name</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Adress</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">City</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Country</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Postal Code</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label>About Me</label>
+                        <div id="haircareForm">
+                          <div class="form-group"><h2>Haircare: Product Specific Information</h2></div>
                           <div class="form-group">
-                            <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
-                            <textarea class="form-control" rows="5"></textarea>
+                            <label for="productname">PRODUCT NAME: </label>
+                            <input class="form-control" type="text" id="productname" placeholder=>
+                          </div>
+                          <div class="form-group">
+                            <label for="productdescription">PRODUCT DESCRIPTION: </label>
+                            <textarea class="form-control" name="productdescription" id="productdescription" rows="10"></textarea>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-group">
+                                <label for="exampleFormControlSelect1">PRODUCT CATEGORY</label>
+                                <select class="form-control" data-style="btn btn-sm btn-primary btn-link" id="exampleFormControlSelect1">
+                                  <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                  <option>5</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group">
+                                <div><label for="productdescription">GENDER:</label></div>
+                                  <div class="form-check form-check-radio form-check-inline">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="gender" id="male" value="make"> Male
+                                    <span class="circle">
+                                      <span class="check"></span>
+                                    </span>
+                                    </label>
+                                  </div>
+                                  <div class="form-check form-check-radio form-check-inline">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="gender" id="female" value="female"> Male
+                                    <span class="circle">
+                                      <span class="check"></span>
+                                    </span>
+                                    </label>
+                                  </div>
+                                  <div class="form-check form-check-radio form-check-inline">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="gender" id="both" value="both"> both
+                                    <span class="circle">
+                                      <span class="check"></span>
+                                    </span>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-group">
+                                <label for="productbrand">PRODUCT BRAND: </label>
+                                <input class="form-control" name="productbrand"type="text">
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group">
+                                <label for="productvolume">PRODUCT CONTENT VOLUME (ml): </label>
+                                <input class="form-control" name="productvolume"type="text">
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group">
+                                <label for="stock">STOCKS AVAILABLE: </label>
+                                <input class="form-control" name="stock"type="text"vplaceholder="No. of products">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="producting">PRODUCT INGREDIENTS: </label>
+                            <textarea class="form-control" name="producting" id="producting" rows="10"></textarea>
+                            <button class="btn btn-primary btn-sm">CHECK VALIDITY</button>
+                          </div>
+                          <div class="form-group">
+                            <label for="images">PRODUCT IMAGES: </label>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-group form-file-upload form-file-multiple">
+                                <input type="file" multiple="" class="inputFileHidden">
+                                <div class="input-group">
+                                    <input type="text" class="form-control inputFileVisible" placeholder="Add Main Image">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-fab btn-round btn-primary">
+                                            <i class="material-icons">attach_file</i>
+                                        </button>
+                                    </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group form-file-upload form-file-multiple">
+                                <input type="file" multiple="" class="inputFileHidden">
+                                <div class="input-group">
+                                    <input type="text" class="form-control inputFileVisible" placeholder="Add image 1">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-fab btn-round btn-primary">
+                                            <i class="material-icons">attach_file</i>
+                                        </button>
+                                    </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group form-file-upload form-file-multiple">
+                                <input type="file" multiple="" class="inputFileHidden">
+                                <div class="input-group">
+                                    <input type="text" class="form-control inputFileVisible" placeholder="Add image 2">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-fab btn-round btn-primary">
+                                            <i class="material-icons">attach_file</i>
+                                        </button>
+                                    </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group form-file-upload form-file-multiple">
+                                <input type="file" multiple="" class="inputFileHidden">
+                                <div class="input-group">
+                                    <input type="text" class="form-control inputFileVisible" placeholder="Add image 3">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-fab btn-round btn-primary">
+                                            <i class="material-icons">attach_file</i>
+                                        </button>
+                                    </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group form-file-upload form-file-multiple">
+                                <input type="file" multiple="" class="inputFileHidden">
+                                <div class="input-group">
+                                    <input type="text" class="form-control inputFileVisible" placeholder="Add image 4">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-fab btn-round btn-primary">
+                                            <i class="material-icons">attach_file</i>
+                                        </button>
+                                    </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group form-file-upload form-file-multiple">
+                                <input type="file" multiple="" class="inputFileHidden">
+                                <div class="input-group">
+                                    <input type="text" class="form-control inputFileVisible" placeholder="Add image 5">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-fab btn-round btn-primary">
+                                            <i class="material-icons">attach_file</i>
+                                        </button>
+                                    </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <br><br>
+                          <div class="form-group">
+                            <input class="btn btn-primary float-right" type="submit" value="Add Product">
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
-                    <div class="clearfix"></div> -->
-                  </form> 
+                        <div id="skincareForm">
+                          <div class="form-group"><h2>Basic Product Information</h2></div>
+                          <div class="form-group">
+                            <label for="productname">PRODUCT NAME: </label>
+                            <input class="form-control" type="text" id="productname" placeholder=>
+                          </div>
+                          <div class="form-group">
+                            <label for="productdescription">PRODUCT DESCRIPTION: </label>
+                            <textarea class="form-control" name="productdescription" id="productdescription" rows="10"></textarea>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-group">
+                                <label for="exampleFormControlSelect1">PRODUCT CATEGORY</label>
+                                <select class="form-control" data-style="btn btn-sm btn-primary btn-link" id="exampleFormControlSelect1">
+                                  <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                  <option>5</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group">
+                                <div><label for="productdescription">GENDER:</label></div>
+                                  <div class="form-check form-check-radio form-check-inline">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="gender" id="male" value="make"> Male
+                                    <span class="circle">
+                                      <span class="check"></span>
+                                    </span>
+                                    </label>
+                                  </div>
+                                  <div class="form-check form-check-radio form-check-inline">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="gender" id="female" value="female"> Male
+                                    <span class="circle">
+                                      <span class="check"></span>
+                                    </span>
+                                    </label>
+                                  </div>
+                                  <div class="form-check form-check-radio form-check-inline">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="gender" id="both" value="both"> both
+                                    <span class="circle">
+                                      <span class="check"></span>
+                                    </span>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-group">
+                                <label for="productbrand">PRODUCT BRAND: </label>
+                                <input class="form-control" name="productbrand"type="text">
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group">
+                                <label for="productvolume">PRODUCT CONTENT VOLUME (ml): </label>
+                                <input class="form-control" name="productvolume"type="text">
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group">
+                                <label for="stock">STOCKS AVAILABLE: </label>
+                                <input class="form-control" name="stock"type="text"vplaceholder="No. of products">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="producting">PRODUCT INGREDIENTS: </label>
+                            <textarea class="form-control" name="producting" id="producting" rows="10"></textarea>
+                            <button class="btn btn-primary btn-sm">CHECK VALIDITY</button>
+                          </div>
+                          <div class="form-group">
+                            <label for="images">PRODUCT IMAGES: </label>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-group form-file-upload form-file-multiple">
+                                <input type="file" multiple="" class="inputFileHidden">
+                                <div class="input-group">
+                                    <input type="text" class="form-control inputFileVisible" placeholder="Add Main Image">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-fab btn-round btn-primary">
+                                            <i class="material-icons">attach_file</i>
+                                        </button>
+                                    </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group form-file-upload form-file-multiple">
+                                <input type="file" multiple="" class="inputFileHidden">
+                                <div class="input-group">
+                                    <input type="text" class="form-control inputFileVisible" placeholder="Add image 1">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-fab btn-round btn-primary">
+                                            <i class="material-icons">attach_file</i>
+                                        </button>
+                                    </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group form-file-upload form-file-multiple">
+                                <input type="file" multiple="" class="inputFileHidden">
+                                <div class="input-group">
+                                    <input type="text" class="form-control inputFileVisible" placeholder="Add image 2">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-fab btn-round btn-primary">
+                                            <i class="material-icons">attach_file</i>
+                                        </button>
+                                    </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group form-file-upload form-file-multiple">
+                                <input type="file" multiple="" class="inputFileHidden">
+                                <div class="input-group">
+                                    <input type="text" class="form-control inputFileVisible" placeholder="Add image 3">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-fab btn-round btn-primary">
+                                            <i class="material-icons">attach_file</i>
+                                        </button>
+                                    </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group form-file-upload form-file-multiple">
+                                <input type="file" multiple="" class="inputFileHidden">
+                                <div class="input-group">
+                                    <input type="text" class="form-control inputFileVisible" placeholder="Add image 4">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-fab btn-round btn-primary">
+                                            <i class="material-icons">attach_file</i>
+                                        </button>
+                                    </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group form-file-upload form-file-multiple">
+                                <input type="file" multiple="" class="inputFileHidden">
+                                <div class="input-group">
+                                    <input type="text" class="form-control inputFileVisible" placeholder="Add image 5">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-fab btn-round btn-primary">
+                                            <i class="material-icons">attach_file</i>
+                                        </button>
+                                    </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <br><br>
+                          <div class="form-group">
+                            <input class="btn btn-primary float-right" type="submit" value="Add Product">
+                          </div>
+                        </div>
+                        <div class="d-none" id="cosmeticsForm">
+                          <div class="form-group"><h2>Basic Product Information</h2></div>
+                          <div class="form-group">
+                            <label for="productname">PRODUCT NAME: </label>
+                            <input class="form-control" type="text" id="productname" placeholder=>
+                          </div>
+                          <div class="form-group">
+                            <label for="productdescription">PRODUCT DESCRIPTION: </label>
+                            <textarea class="form-control" name="productdescription" id="productdescription" rows="10"></textarea>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-group">
+                                <label for="exampleFormControlSelect1">PRODUCT CATEGORY</label>
+                                <select class="form-control" data-style="btn btn-sm btn-primary btn-link" id="exampleFormControlSelect1">
+                                  <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                  <option>5</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group">
+                                <div><label for="productdescription">GENDER:</label></div>
+                                  <div class="form-check form-check-radio form-check-inline">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="gender" id="male" value="make"> Male
+                                    <span class="circle">
+                                      <span class="check"></span>
+                                    </span>
+                                    </label>
+                                  </div>
+                                  <div class="form-check form-check-radio form-check-inline">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="gender" id="female" value="female"> Male
+                                    <span class="circle">
+                                      <span class="check"></span>
+                                    </span>
+                                    </label>
+                                  </div>
+                                  <div class="form-check form-check-radio form-check-inline">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="gender" id="both" value="both"> both
+                                    <span class="circle">
+                                      <span class="check"></span>
+                                    </span>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-group">
+                                <label for="productbrand">PRODUCT BRAND: </label>
+                                <input class="form-control" name="productbrand"type="text">
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group">
+                                <label for="productvolume">PRODUCT CONTENT VOLUME (ml): </label>
+                                <input class="form-control" name="productvolume"type="text">
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group">
+                                <label for="stock">STOCKS AVAILABLE: </label>
+                                <input class="form-control" name="stock"type="text"vplaceholder="No. of products">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="producting">PRODUCT INGREDIENTS: </label>
+                            <textarea class="form-control" name="producting" id="producting" rows="10"></textarea>
+                            <button class="btn btn-primary btn-sm">CHECK VALIDITY</button>
+                          </div>
+                          <div class="form-group">
+                            <label for="images">PRODUCT IMAGES: </label>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-group form-file-upload form-file-multiple">
+                                <input type="file" multiple="" class="inputFileHidden">
+                                <div class="input-group">
+                                    <input type="text" class="form-control inputFileVisible" placeholder="Add Main Image">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-fab btn-round btn-primary">
+                                            <i class="material-icons">attach_file</i>
+                                        </button>
+                                    </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group form-file-upload form-file-multiple">
+                                <input type="file" multiple="" class="inputFileHidden">
+                                <div class="input-group">
+                                    <input type="text" class="form-control inputFileVisible" placeholder="Add image 1">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-fab btn-round btn-primary">
+                                            <i class="material-icons">attach_file</i>
+                                        </button>
+                                    </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group form-file-upload form-file-multiple">
+                                <input type="file" multiple="" class="inputFileHidden">
+                                <div class="input-group">
+                                    <input type="text" class="form-control inputFileVisible" placeholder="Add image 2">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-fab btn-round btn-primary">
+                                            <i class="material-icons">attach_file</i>
+                                        </button>
+                                    </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group form-file-upload form-file-multiple">
+                                <input type="file" multiple="" class="inputFileHidden">
+                                <div class="input-group">
+                                    <input type="text" class="form-control inputFileVisible" placeholder="Add image 3">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-fab btn-round btn-primary">
+                                            <i class="material-icons">attach_file</i>
+                                        </button>
+                                    </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group form-file-upload form-file-multiple">
+                                <input type="file" multiple="" class="inputFileHidden">
+                                <div class="input-group">
+                                    <input type="text" class="form-control inputFileVisible" placeholder="Add image 4">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-fab btn-round btn-primary">
+                                            <i class="material-icons">attach_file</i>
+                                        </button>
+                                    </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group form-file-upload form-file-multiple">
+                                <input type="file" multiple="" class="inputFileHidden">
+                                <div class="input-group">
+                                    <input type="text" class="form-control inputFileVisible" placeholder="Add image 5">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-fab btn-round btn-primary">
+                                            <i class="material-icons">attach_file</i>
+                                        </button>
+                                    </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <br><br>
+                          <div class="form-group">
+                            <input class="btn btn-primary float-right" type="submit" value="Add Product">
+                          </div>
+                        </div>
+                        <div id="otherForm">
+                          <div class="form-group"><h2>Basic Product Information</h2></div>
+                          <div class="form-group">
+                            <label for="productname">PRODUCT NAME: </label>
+                            <input class="form-control" type="text" id="productname" placeholder=>
+                          </div>
+                          <div class="form-group">
+                            <label for="productdescription">PRODUCT DESCRIPTION: </label>
+                            <textarea class="form-control" name="productdescription" id="productdescription" rows="10"></textarea>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-group">
+                                <label for="exampleFormControlSelect1">PRODUCT CATEGORY</label>
+                                <select class="form-control" data-style="btn btn-sm btn-primary btn-link" id="exampleFormControlSelect1">
+                                  <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                  <option>5</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group">
+                                <div><label for="productdescription">GENDER:</label></div>
+                                  <div class="form-check form-check-radio form-check-inline">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="gender" id="male" value="make"> Male
+                                    <span class="circle">
+                                      <span class="check"></span>
+                                    </span>
+                                    </label>
+                                  </div>
+                                  <div class="form-check form-check-radio form-check-inline">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="gender" id="female" value="female"> Male
+                                    <span class="circle">
+                                      <span class="check"></span>
+                                    </span>
+                                    </label>
+                                  </div>
+                                  <div class="form-check form-check-radio form-check-inline">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="gender" id="both" value="both"> both
+                                    <span class="circle">
+                                      <span class="check"></span>
+                                    </span>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-group">
+                                <label for="productbrand">PRODUCT BRAND: </label>
+                                <input class="form-control" name="productbrand"type="text">
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group">
+                                <label for="productvolume">PRODUCT CONTENT VOLUME (ml): </label>
+                                <input class="form-control" name="productvolume"type="text">
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group">
+                                <label for="stock">STOCKS AVAILABLE: </label>
+                                <input class="form-control" name="stock"type="text"vplaceholder="No. of products">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="producting">PRODUCT INGREDIENTS: </label>
+                            <textarea class="form-control" name="producting" id="producting" rows="10"></textarea>
+                            <button class="btn btn-primary btn-sm">CHECK VALIDITY</button>
+                          </div>
+                          <div class="form-group">
+                            <label for="images">PRODUCT IMAGES: </label>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-group form-file-upload form-file-multiple">
+                                <input type="file" multiple="" class="inputFileHidden">
+                                <div class="input-group">
+                                    <input type="text" class="form-control inputFileVisible" placeholder="Add Main Image">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-fab btn-round btn-primary">
+                                            <i class="material-icons">attach_file</i>
+                                        </button>
+                                    </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group form-file-upload form-file-multiple">
+                                <input type="file" multiple="" class="inputFileHidden">
+                                <div class="input-group">
+                                    <input type="text" class="form-control inputFileVisible" placeholder="Add image 1">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-fab btn-round btn-primary">
+                                            <i class="material-icons">attach_file</i>
+                                        </button>
+                                    </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group form-file-upload form-file-multiple">
+                                <input type="file" multiple="" class="inputFileHidden">
+                                <div class="input-group">
+                                    <input type="text" class="form-control inputFileVisible" placeholder="Add image 2">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-fab btn-round btn-primary">
+                                            <i class="material-icons">attach_file</i>
+                                        </button>
+                                    </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group form-file-upload form-file-multiple">
+                                <input type="file" multiple="" class="inputFileHidden">
+                                <div class="input-group">
+                                    <input type="text" class="form-control inputFileVisible" placeholder="Add image 3">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-fab btn-round btn-primary">
+                                            <i class="material-icons">attach_file</i>
+                                        </button>
+                                    </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group form-file-upload form-file-multiple">
+                                <input type="file" multiple="" class="inputFileHidden">
+                                <div class="input-group">
+                                    <input type="text" class="form-control inputFileVisible" placeholder="Add image 4">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-fab btn-round btn-primary">
+                                            <i class="material-icons">attach_file</i>
+                                        </button>
+                                    </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group form-file-upload form-file-multiple">
+                                <input type="file" multiple="" class="inputFileHidden">
+                                <div class="input-group">
+                                    <input type="text" class="form-control inputFileVisible" placeholder="Add image 5">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-fab btn-round btn-primary">
+                                            <i class="material-icons">attach_file</i>
+                                        </button>
+                                    </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <br><br>
+                          <div class="form-group">
+                            <input class="btn btn-primary float-right" type="submit" value="Add Product">
+                          </div>
+                        </div>
+
+                        <!-- Form buttons -->
+                        <div class="form-group">
+                          <button class="btn btn-primary" id="peviousbtn">Previous</button>
+                        </div>
+                        <div class="form-group">
+                          <button class="btn btn-primary" id="nextbtn">Next</button>
+                        </div>
+                        <div class="form-group">
+                          <input type="submit" class="btn btn-primary" id="submitbtn">Submit</button>
+                        </div>
+                      </form>
                     </div>
                   </div>
                 </div>
