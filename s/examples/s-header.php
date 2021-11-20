@@ -56,7 +56,7 @@
             </a>
           </li>
           <li class="nav-item active-pro ">
-            <a class="nav-link" href="./settings.php">
+            <a class="nav-link" href="./s-settings.php">
               <i class="material-icons">person</i>
               <p>Account Settings</p>
             </a>
