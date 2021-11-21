@@ -4,20 +4,13 @@
 <div class="content">
     <div class="container-fluid">
 <?php 
- include("_s-statistics-card-ng.php");
+ include("_s-dashboard-top-card.php");
 ?>
  
 <?php 
- include("_s-statistics-card.php");
+ include("_s-dashboard-orders-and-sales.php");
 ?>
 
-<?php 
- include("_s-pagination-prod-list.php");
-?>
-
-<?php 
- include("_s-prod-list.php");
-?>
     </div>
 </div>
 <?php 

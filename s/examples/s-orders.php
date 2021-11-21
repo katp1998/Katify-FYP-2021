@@ -13,7 +13,7 @@
                             <ul class="nav nav-tabs" data-tabs="tabs">
                             <li class="nav-item">
                                 <a class="nav-link active" href="#pendingorders" data-toggle="tab">
-                                <i class="material-icons">autorenew</i> Pending Orders
+                                <i class="material-icons">pending_actions</i> Pending Orders
                                 <div class="ripple-container"></div>
                                 </a>
                             </li>
