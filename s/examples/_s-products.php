@@ -654,12 +654,12 @@
             </table>
           </div>
           <div class="tab-pane" id="addproduct">   
-            <form id="productForm" action="">
+            <form id="productForm" action="s-db-interaction.php" method="POST">
               <div id="basic">
                 <div class="form-group"><h2>Basic Product Information</h2></div>
                 <div class="form-group">
                   <label for="productname">PRODUCT NAME: </label>
-                  <input class="form-control" type="text" id="productname" placeholder=>
+                  <input class="form-control" type="text" name="productname">
                 </div>
                 <div class="form-group">
                   <label for="productdescription">PRODUCT DESCRIPTION: </label>
@@ -1726,21 +1726,11 @@
                     </div>
                   </div>
                 </div>
-                <br><br>
-                <div class="form-group">
-                  <input class="btn btn-primary float-right" type="submit" value="Add Product">
-                </div>
               </div>
 
               <!-- Form buttons -->
               <div class="form-group">
-                <button class="btn btn-primary" id="peviousbtn">Previous</button>
-              </div>
-              <div class="form-group">
-                <button class="btn btn-primary" id="nextbtn">Next</button>
-              </div>
-              <div class="form-group">
-                <input type="submit" class="btn btn-primary" id="submitbtn">Submit</button>
+                <button type="submit" class="btn btn-primary" name="addprodbtn">ADD PRODUCT</button>
               </div>
             </form>
           </div>
