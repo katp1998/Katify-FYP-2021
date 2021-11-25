@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-md-4">
     <div class="card card-chart">
-      <div class="card-header card-header-warning">
+      <div class="card-header card-header-primary">
         <div class="ct-chart" id="websiteViewsChart"></div>
       </div>
       <div class="card-body">
@@ -18,13 +18,13 @@
   </div>
   <div class="col-md-8">   
     <div class="card">
-      <div class="card-header card-header-warning">
+      <div class="card-header card-header-primary">
         <h4 class="card-title">Overall Order Report</h4>
         <p class="card-category">Year 2021</p>
       </div>
       <div class="card-body table-responsive">
         <table class="table table-hover">
-          <thead class="text-warning">
+          <thead class="text-primary">
             <th>Criteria</th>
             <th style="text-align: center; vertical-align: middle;">Amount</th>
           </thead>

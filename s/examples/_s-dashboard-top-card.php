@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-lg-4">
     <div class="card card-stats">
-      <div class="card-header card-header-warning card-header-icon">
+      <div class="card-header card-header-primary card-header-icon">
         <div class="card-icon">
           <i class="material-icons">pending_actions</i>
         </div>
@@ -20,7 +20,7 @@
   </div>
   <div class="col-lg-4">
     <div class="card card-stats">
-      <div class="card-header card-header-danger card-header-icon">
+      <div class="card-header card-header-primary card-header-icon">
         <div class="card-icon">
           <i class="material-icons">arrow_upward</i>
         </div>
@@ -38,7 +38,7 @@
   </div>
   <div class="col-lg-4">
     <div class="card card-stats">
-      <div class="card-header card-header-info card-header-icon">
+      <div class="card-header card-header-primary card-header-icon">
         <div class="card-icon">
           <i class="material-icons">mark_unread_chat_alt</i>
         </div>
