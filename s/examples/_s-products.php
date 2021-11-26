@@ -45,299 +45,93 @@
         <div class="tab-content">
           <div class="tab-pane active" id="pendingapproval">
             <table class="table">
+            <?php
+            //getting table data from the database - pending approval
+            $fetch_pending_approval_table_data_prod_q = "SELECT * FROM products WHERE p_status = 'Pending Approval'";
+            $query_run1 = mysqli_query($conn, $fetch_pending_approval_table_data_prod_q);
+            ?>
               <thead class=" text-primary" >
-              <th >
-                P_ID
-              </th>
-              <th>
-                Name
-              </th>
-              <th>
-                Stock
-              </th>
-              <th>
-                Description
-              </th>
-              <th>
-                Price
-              </th>
-              <th style="text-align: center; vertical-align: middle;">
-                Status
-              </th>
+              <th>P_ID</th>
+              <th>Name</th>
+              <th>Stock</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th style="text-align: center; vertical-align: middle;">Status</th>
               </thead>
               <tbody>
+                <?php 
+                if (mysqli_num_rows($query_run1) > 0){
+                  while($row_pending = mysqli_fetch_assoc($query_run1)){
+                ?>    
                 <tr>
-                  <td>
-                    1
-                  </td>
-                  <td>
-                    Dakota Rice
-                  </td>
-                  <td>
-                    Niger
-                  </td>
-                  <td>
-                    Oud-Turnhout
-                  </td>
-                  <td class="text-primary">
-                    $36,738
-                  </td>
-                  <td class="text-center" >
-                      <div class="btn btn-outline-warning btn-sm">Pending</div>
-                  </td>
-            
+                  <td><?php echo $row_pending['p_id']; ?></td>
+                  <td><?php echo $row_pending['p_name']; ?></td>
+                  <td><?php echo $row_pending['p_stock']; ?></td>
+                  <td><?php echo $row_pending['p_descrip']; ?></td>
+                  <td class="text-primary"><?php echo $row_pending['p_price']; ?></td>
+                  <td class="text-center" ><div class="btn btn-warning btn-sm"><?php echo $row_pending['p_status']; ?></div></td>
                 </tr>
-                <tr>
-                  <td>
-                    2
-                  </td>
-                  <td>
-                    Minerva Hooper
-                  </td>
-                  <td>
-                    Curaçao
-                  </td>
-                  <td>
-                    Sinaai-Waas
-                  </td>
-                  <td class="text-primary">
-                    $23,789
-                  </td>
-                  <td class="text-center" >
-                      <div class="btn btn-outline-warning btn-sm">Pending</div>
-                  </td>
-                
-                </tr>
-                <tr>
-                  <td>
-                    3
-                  </td>
-                  <td>
-                    Sage Rodriguez
-                  </td>
-                  <td>
-                    Netherlands
-                  </td>
-                  <td>
-                    Baileux
-                  </td>
-                  <td class="text-primary">
-                    $56,142
-                  </td>
-                  <td class="text-center" >
-                      <div class="btn btn-outline-warning btn-sm">Pending</div>
-                  </td>
-                  
-                </tr>
-                <tr>
-                  <td>
-                    4
-                  </td>
-                  <td>
-                    Philip Chaney
-                  </td>
-                  <td>
-                    Korea, South
-                  </td>
-                  <td>
-                    Overland Park
-                  </td>
-                  <td class="text-primary">
-                    $38,735
-                  </td>
-                  <td class="text-center" >
-                      <div class="btn btn-outline-warning btn-sm">Pending</div>
-                  </td>
-                  
-                </tr>
-                <tr>
-                  <td>
-                    5
-                  </td>
-                  <td>
-                    Doris Greene
-                  </td>
-                  <td>
-                    Malawi
-                  </td>
-                  <td>
-                    Feldkirchen in Kärnten
-                  </td>
-                  <td class="text-primary">
-                    $63,542
-                  </td>
-                  <td class="text-center" >
-                      <div class="btn btn-outline-warning btn-sm">Pending</div>
-                  </td>
-                  
-                </tr>
-                <tr>
-                  <td>
-                    6
-                  </td>
-                  <td>
-                    Mason Porter
-                  </td>
-                  <td>
-                    Chile
-                  </td>
-                  <td>
-                    Gloucester
-                  </td>
-                  <td class="text-primary">
-                    $78,615
-                  </td>
-                  <td class="text-center" >
-                      <div class="btn btn-outline-warning btn-sm">Pending</div>
-                  </td>
-                </tr>
+                <?php    
+                  }
+                }else{
+                  echo "No results found";
+                }
+                ?>
               </tbody>
             </table>
           </div>
           <div class="tab-pane" id="active">
+          <?php
+            //getting table data from the database - active products
+            
+            $fetch_active_table_data_prod_q = "SELECT * FROM products WHERE p_status = 'Active'";
+            $query_run2 = mysqli_query($conn, $fetch_active_table_data_prod_q);
+          ?>
             <table class="table">
-            <thead class=" text-primary">
-            <th >
-                P_ID
-              </th>
-              <th>
-                Name
-              </th>
-              <th>
-                Stock
-              </th>
-              <th>
-                Description
-              </th>
-              <th>
-                Price
-              </th>
-              <th style="text-align: center; vertical-align: middle;">
-                Active/Inactive
-              </th>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  1
-                </td>
-                <td>
-                  Dakota Rice
-                </td>
-                <td>
-                  Niger
-                </td>
-                <td>
-                  Oud-Turnhout
-                </td>
-                <td class="text-primary">
-                  $36,738
-                </td>
-                <td style="text-align: center; vertical-align: middle;">
-                  <input type="checkbox">
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  2
-                </td>
-                <td>
-                  Minerva Hooper
-                </td>
-                <td>
-                  Curaçao
-                </td>
-                <td>
-                  Sinaai-Waas
-                </td>
-                <td class="text-primary">
-                  $23,789
-                </td>
-                <td style="text-align: center; vertical-align: middle;">
-                  <input type="checkbox">
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  3
-                </td>
-                <td>
-                  Sage Rodriguez
-                </td>
-                <td>
-                  Netherlands
-                </td>
-                <td>
-                  Baileux
-                </td>
-                <td class="text-primary">
-                  $56,142
-                </td>
-                <td style="text-align: center; vertical-align: middle;">
-                  <input type="checkbox">
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  4
-                </td>
-                <td>
-                  Philip Chaney
-                </td>
-                <td>
-                  Korea, South
-                </td>
-                <td>
-                  Overland Park
-                </td>
-                <td class="text-primary">
-                  $38,735
-                </td>
-                <td style="text-align: center; vertical-align: middle;">
-                  <input type="checkbox">
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  5
-                </td>
-                <td>
-                  Doris Greene
-                </td>
-                <td>
-                  Malawi
-                </td>
-                <td>
-                  Feldkirchen in Kärnten
-                </td>
-                <td class="text-primary">
-                  $63,542
-                </td>
-                <td style="text-align: center; vertical-align: middle;">
-                  <input type="checkbox">
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  6
-                </td>
-                <td>
-                  Mason Porter
-                </td>
-                <td>
-                  Chile
-                </td>
-                <td>
-                  Gloucester
-                </td>
-                <td class="text-primary">
-                  $78,615
-                </td>
-                <td style="text-align: center; vertical-align: middle;">
-                  <input type="checkbox">
-                </td>
-              </tr>
-            </tbody>
+              <thead class=" text-primary">
+                <th>P_ID</th>
+                <th>Name</th>
+                <th>Stock</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th style="text-align: center; vertical-align: middle;">Active/Inactive</th>
+                <th>Edit/Delete Product</th>
+              </thead>
+              <tbody>
+                <?php 
+                if (mysqli_num_rows($query_run2) > 0){
+                  while($row_active = mysqli_fetch_assoc($query_run2)){
+                ?>
+                <tr>
+                  <td><?php echo $row_active['p_id']; ?></td>
+                  <td><?php echo $row_active['p_name']; ?></td>
+                  <td><?php echo $row_active['p_stock']; ?></td>
+                  <td><?php echo $row_active['p_descrip']; ?></td>
+                  <td class="text-primary"><?php echo $row_active['p_price']; ?></td>
+                  <td style="text-align: center; vertical-align: middle;">
+                    <div class="togglebutton">
+                      <label>
+                        <input type="checkbox" checked="">
+                          <span class="toggle"></span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <button type="button" rel="tooltip" title="Edit Product" class="btn btn-info btn-link btn-sm">
+                      <i class="material-icons">edit</i>
+                    </button>
+                    <button type="button" rel="tooltip" title="Delete Product" class="btn btn-danger btn-link btn-sm">
+                      <i class="material-icons">close</i>
+                    </button>
+                  </td>
+                </tr>
+                <?php    
+                  }
+                }else{
+                  echo "No results found";
+                }
+                ?>
+              </tbody>
             </table>
           </div>
           <div class="tab-pane" id="all">

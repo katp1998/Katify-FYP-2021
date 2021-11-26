@@ -1,4 +1,5 @@
 <?php 
+$conn = mysqli_connect("localhost","root","","beaut_ecom"); 
  include("s-header.php");
 ?>
 <div class="content">
