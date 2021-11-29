@@ -1,22 +1,25 @@
 <?php
-session_start();
+date_default_timezone_set("asia/colombo");
+require 's-db-connect.php';
 
-$conn = mysqli_connect("localhost","root","","beaut_ecom"); 
+//DATABASE CALLS FOR 'PRODUCTS.PHP' >> FETCH EVENTS
 
-if(isset($_POST['addprodbtn'])){
-    $product_name = $_POST['productname'];
-    $product_descrip = $_POST['productdescription'];
-
-    $add_to_product_table_q = "INSERT INTO product (p_name, p_descrip) VALUES ('$product_name', '$product_descrip')";
-    $query_run = mysqli_query($conn, $add_to_product_table_q);
-
-    if($query_run){
-        $_SESSION['success'] = "Stuff added boss";
-        header('Location: s-products.php');
-    }else{
-        $_SESSION['status'] = "shit happened boss";
-        header('Location: s-products.php');
-    }
+//FETCHING DATA FOR PRODUCTS > ALL
+if(isset($_POST['loadTrTbl'])) {
+    $db = new DbConnect;
+    $conn = $db->connect();
+    $stmt = $conn->prepare("SELECT * FROM `products`;"); // where seller ID is the one that is logged in
+    $stmt->execute();
+    $trs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    echo json_encode($trs);
 }
+
+//FETCHING DATA FOR PRODUCTS > PENDING ORDERS
+
+//FETCHING DATA FOR PRODUCTS > ACTIVE
+
+//FETCHING DATA FOR PRODUCTS > INACTIVE
+
+//FETCHING DATA FOR PRODUCTS > 
 
 ?>
