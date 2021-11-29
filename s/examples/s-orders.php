@@ -6,7 +6,7 @@
         <!-- pagination product list start-->
         <div class="row">
             <div class="card">
-                <div class="card-header card-header-tabs card-header-primary">
+                <div class="card-header card-header-tabs card-header-danger">
                     <div class="nav-tabs-navigation">
                         <div class="nav-tabs-wrapper">
                             <span class="nav-tabs-title">Orders: </span>
@@ -55,7 +55,7 @@
                     <div class="tab-content">
                         <div class="tab-pane active" id="pendingorders">
                             <table class="table">
-                                <thead class="table-primary">
+                                <thead class="table-danger">
                                     <th>O_ID</th>
                                     <th>Order Date</th>
                                     <th>Purchased Products</th>
@@ -72,7 +72,7 @@
                                     <td>Rs. 1290.00</td>
                                     <td>COD</td>
                                     <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-danger btn-link btn-sm">
                                             <i class="material-icons">done</i>
                                         </button>
                                         <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
@@ -84,7 +84,7 @@
                         </div>
                         <div class="tab-pane" id="tobehanded">
                             <table class="table">
-                                <thead class="table-primary">
+                                <thead class="table-danger">
                                     <th>O_ID</th>
                                     <th>Order Date</th>
                                     <th>Order age</th>
@@ -104,7 +104,7 @@
                         </div>
                         <div class="tab-pane" id="shipped">
                             <table class="table">
-                                <thead class="table-primary">
+                                <thead class="table-danger">
                                     <th>O_ID</th>
                                     <th>Order Date</th>
                                     <th>Shipped date</th>
@@ -122,7 +122,7 @@
                         </div>
                         <div class="tab-pane" id="delivered">
                             <table class="table">
-                                <thead class="table-primary">
+                                <thead class="table-danger">
                                     <th>O_ID</th>
                                     <th>Order Date</th>
                                     <th>Shipped date</th>
@@ -142,7 +142,7 @@
                         </div>
                         <div class="tab-pane" id="cancelled">
                             <table class="table">
-                                <thead class="table-primary">
+                                <thead class="table-danger">
                                     <th>O_ID</th>
                                     <th>Order Date</th>
                                     <th>Purchased Products</th>
@@ -166,7 +166,7 @@
                         </div>
                         <div class="tab-pane" id="returned">   
                             <table class="table">
-                                <thead class="table-primary">
+                                <thead class="table-danger">
                                     <th>O_ID</th>
                                     <th>Order Date</th>
                                     <th>Purchased Products</th>

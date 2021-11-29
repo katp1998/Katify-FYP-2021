@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col">
                 <div class="card">
-                <div class="card-header card-header-primary">
+                <div class="card-header card-header-danger">
                     <h4 class="card-title">Edit Profile</h4>
                     <p class="card-category">Complete your profile</p>
                 </div>
@@ -85,7 +85,7 @@
                         </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
+                    <button type="submit" class="btn btn-danger pull-right">Update Profile</button>
                     <div class="clearfix"></div>
                     </form>
                 </div>

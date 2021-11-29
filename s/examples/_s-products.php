@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col">
     <div class="card">
-      <div class="card-header card-header-tabs card-header-primary">
+      <div class="card-header card-header-tabs card-header-danger">
         <div class="nav-tabs-navigation">
           <div class="nav-tabs-wrapper">
             <span class="nav-tabs-title">Products:</span>
@@ -43,71 +43,36 @@
       </div>
       <div class="card-body">
         <div class="tab-content">
-          <div class="tab-pane active" id="pendingapproval">
+          <div class="tab-pane" id="all">
             <table class="table">
-            <?php
-            //getting table data from the database - pending approval
-            $fetch_pending_approval_table_data_prod_q = "SELECT * FROM products WHERE p_status = 'Pending Approval'";
-            $query_run1 = mysqli_query($conn, $fetch_pending_approval_table_data_prod_q);
-            ?>
-              <thead class=" text-primary" >
-              <th>P_ID</th>
-              <th>Name</th>
-              <th>Stock</th>
-              <th>Description</th>
-              <th>Price</th>
-              <th style="text-align: center; vertical-align: middle;">Status</th>
-              </thead>
-              <tbody>
-                <?php 
-                if (mysqli_num_rows($query_run1) > 0){
-                  while($row_pending = mysqli_fetch_assoc($query_run1)){
-                ?>    
-                <tr>
-                  <td><?php echo $row_pending['p_id']; ?></td>
-                  <td><?php echo $row_pending['p_name']; ?></td>
-                  <td><?php echo $row_pending['p_stock']; ?></td>
-                  <td><?php echo $row_pending['p_descrip']; ?></td>
-                  <td class="text-primary"><?php echo $row_pending['p_price']; ?></td>
-                  <td class="text-center" ><div class="btn btn-warning btn-sm"><?php echo $row_pending['p_status']; ?></div></td>
-                </tr>
-                <?php    
-                  }
-                }else{
-                  echo "No results found";
-                }
-                ?>
-              </tbody>
-            </table>
-          </div>
-          <div class="tab-pane" id="active">
-          <?php
-            //getting table data from the database - active products
-            
-            $fetch_active_table_data_prod_q = "SELECT * FROM products WHERE p_status = 'Active'";
-            $query_run2 = mysqli_query($conn, $fetch_active_table_data_prod_q);
-          ?>
-            <table class="table">
-              <thead class=" text-primary">
-                <th>P_ID</th>
+                <thead class="text-danger" >
+                <th >P_ID</th>
                 <th>Name</th>
                 <th>Stock</th>
                 <th>Description</th>
                 <th>Price</th>
+                <th style="text-align: center; vertical-align: middle;">Status</th>
                 <th style="text-align: center; vertical-align: middle;">Active/Inactive</th>
                 <th>Edit/Delete Product</th>
               </thead>
               <tbody>
-                <?php 
-                if (mysqli_num_rows($query_run2) > 0){
-                  while($row_active = mysqli_fetch_assoc($query_run2)){
-                ?>
                 <tr>
-                  <td><?php echo $row_active['p_id']; ?></td>
-                  <td><?php echo $row_active['p_name']; ?></td>
-                  <td><?php echo $row_active['p_stock']; ?></td>
-                  <td><?php echo $row_active['p_descrip']; ?></td>
-                  <td class="text-primary"><?php echo $row_active['p_price']; ?></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td class="text-danger"></td>
+                  <td class="text-center" >
+                      <div class="badge badge-danger">Not Approved</div> <!--JS script required to change colors according to the status-->
+                  </td>
+                  <!--
+                  <td class="text-center" >
+                      <div class="btn btn-success btn-sm">Approved</div>
+                  </td>
+                  <td class="text-center" >
+                      <div class="btn btn-warning btn-sm">Pending</div>
+                  </td>
+                  -->
                   <td style="text-align: center; vertical-align: middle;">
                     <div class="togglebutton">
                       <label>
@@ -125,177 +90,66 @@
                     </button>
                   </td>
                 </tr>
-                <?php    
-                  }
-                }else{
-                  echo "No results found";
-                }
-                ?>
               </tbody>
             </table>
           </div>
-          <div class="tab-pane" id="all">
+          <div class="tab-pane active" id="pendingapproval">
             <table class="table">
-                <thead class=" text-primary" >
-                <th >
-                  P_ID
-                </th>
-                <th>
-                  Name
-                </th>
-                <th>
-                  Stock
-                </th>
-                <th>
-                  Description
-                </th>
-                <th>
-                  Price
-                </th>
-                <th style="text-align: center; vertical-align: middle;">
-                  Status
-                </th>
-                <th style="text-align: center; vertical-align: middle;">
-                  Active/Inactive
-                </th>
+              <thead class=" text-danger" >
+              <th>P_ID</th>
+              <th>Name</th>
+              <th>Stock</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th style="text-align: center; vertical-align: middle;">Status</th>
+              </thead>
+              <tbody>    
+                <tr>
+                  <td><?php echo $row_pending['p_id']; ?></td>
+                  <td><?php echo $row_pending['p_name']; ?></td>
+                  <td><?php echo $row_pending['p_stock']; ?></td>
+                  <td><?php echo $row_pending['p_descrip']; ?></td>
+                  <td class="text">Rs.<?php echo $row_pending['p_price']; ?></td>
+                  <td class="text-center" ><div class="badge badge-warning btn-sm"><?php echo $row_pending['p_status']; ?></div></td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+          <div class="tab-pane" id="active">
+
+            <table class="table">
+              <thead class=" text-danger">
+                <th>P_ID</th>
+                <th>Name</th>
+                <th>Stock</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th style="text-align: center; vertical-align: middle;">Active/Inactive</th>
+                <th>Edit/Delete Product</th>
               </thead>
               <tbody>
                 <tr>
-                  <td>
-                    1
-                  </td>
-                  <td>
-                    Dakota Rice
-                  </td>
-                  <td>
-                    Niger
-                  </td>
-                  <td>
-                    Oud-Turnhout
-                  </td>
-                  <td class="text-primary">
-                    $36,738
-                  </td>
-                  <td class="text-center" >
-                      <div class="btn btn-outline-danger btn-sm">Not Approved</div>
-                  </td>
+                  <td><?php echo $row_active['p_id']; ?></td>
+                  <td><?php echo $row_active['p_name']; ?></td>
+                  <td><?php echo $row_active['p_stock']; ?></td>
+                  <td><?php echo $row_active['p_descrip']; ?></td>
+                  <td class="text">Rs.<?php echo $row_active['p_price']; ?></td>
                   <td style="text-align: center; vertical-align: middle;">
-                    <input type="checkbox">
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    2
-                  </td>
-                  <td>
-                    Minerva Hooper
+                    <div class="togglebutton">
+                      <label>
+                        <input type="checkbox" checked="">
+                          <span class="toggle"></span>
+                      </label>
+                    </div>
                   </td>
                   <td>
-                    Curaçao
-                  </td>
-                  <td>
-                    Sinaai-Waas
-                  </td>
-                  <td class="text-primary">
-                    $23,789
-                  </td>
-                  <td class="text-center" >
-                      <div class="btn btn-outline-success btn-sm">Approved</div>
-                  </td>
-                  <td style="text-align: center; vertical-align: middle;">
-                    <input type="checkbox">
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    3
-                  </td>
-                  <td>
-                    Sage Rodriguez
-                  </td>
-                  <td>
-                    Netherlands
-                  </td>
-                  <td>
-                    Baileux
-                  </td>
-                  <td class="text-primary">
-                    $56,142
-                  </td>
-                  <td class="text-center" >
-                      <div class="btn btn-outline-success btn-sm">Approved</div>
-                  </td>
-                  <td style="text-align: center; vertical-align: middle;">
-                    <input type="checkbox">
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    4
-                  </td>
-                  <td>
-                    Philip Chaney
-                  </td>
-                  <td>
-                    Korea, South
-                  </td>
-                  <td>
-                    Overland Park
-                  </td>
-                  <td class="text-primary">
-                    $38,735
-                  </td>
-                  <td class="text-center" >
-                      <div class="btn btn-outline-warning btn-sm">Pending</div>
-                  </td>
-                  <td style="text-align: center; vertical-align: middle;">
-                    <input type="checkbox">
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    5
-                  </td>
-                  <td>
-                    Doris Greene
-                  </td>
-                  <td>
-                    Malawi
-                  </td>
-                  <td>
-                    Feldkirchen in Kärnten
-                  </td>
-                  <td class="text-primary">
-                    $63,542
-                  </td>
-                  <td class="text-center" >
-                      <div class="btn btn-outline-success btn-sm">Approved</div>
-                  </td>
-                  <td style="text-align: center; vertical-align: middle;">
-                    <input type="checkbox">
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    6
-                  </td>
-                  <td>
-                    Mason Porter
-                  </td>
-                  <td>
-                    Chile
-                  </td>
-                  <td>
-                    Gloucester
-                  </td>
-                  <td class="text-primary">
-                    $78,615
-                  </td>
-                  <td class="text-center" >
-                      <div class="btn btn-outline-success btn-sm">Approved</div>
-                  </td>
-                  <td style="text-align: center; vertical-align: middle;">
-                    <input type="checkbox">
+                    <button type="button" rel="tooltip" title="Edit Product" class="btn btn-info btn-link btn-sm">
+                      <i class="material-icons">edit</i>
+                    </button>
+                    <button type="button" rel="tooltip" title="Delete Product" class="btn btn-danger btn-link btn-sm">
+                      <i class="material-icons">close</i>
+                    </button>
                   </td>
                 </tr>
               </tbody>
@@ -303,7 +157,7 @@
           </div>
           <div class="tab-pane" id="inactive">
             <table class="table">
-              <thead class=" text-primary">
+              <thead class=" text-danger">
               <th >
                   P_ID
                 </th>
@@ -337,7 +191,7 @@
                   <td>
                     Oud-Turnhout
                   </td>
-                  <td class="text-primary">
+                  <td class="text-danger">
                     $36,738
                   </td>
                   <td style="text-align: center; vertical-align: middle;">
@@ -357,7 +211,7 @@
                   <td>
                     Sinaai-Waas
                   </td>
-                  <td class="text-primary">
+                  <td class="text-danger">
                     $23,789
                   </td>
                   <td style="text-align: center; vertical-align: middle;">
@@ -377,7 +231,7 @@
                   <td>
                     Baileux
                   </td>
-                  <td class="text-primary">
+                  <td class="text-danger">
                     $56,142
                   </td>
                   <td style="text-align: center; vertical-align: middle;">
@@ -397,7 +251,7 @@
                   <td>
                     Overland Park
                   </td>
-                  <td class="text-primary">
+                  <td class="text-danger">
                     $38,735
                   </td>
                   <td style="text-align: center; vertical-align: middle;">
@@ -417,7 +271,7 @@
                   <td>
                     Feldkirchen in Kärnten
                   </td>
-                  <td class="text-primary">
+                  <td class="text-danger">
                     $63,542
                   </td>
                   <td style="text-align: center; vertical-align: middle;">
@@ -437,7 +291,7 @@
                   <td>
                     Gloucester
                   </td>
-                  <td class="text-primary">
+                  <td class="text-danger">
                     $78,615
                   </td>
                   <td style="text-align: center; vertical-align: middle;">
@@ -463,7 +317,7 @@
                   <div class="col">
                     <div class="form-group">
                       <label for="productCat">PRODUCT CATEGORY</label>
-                      <select class="form-control" data-style="btn btn-sm btn-primary btn-link" id="productCat">
+                      <select class="form-control" data-style="btn btn-sm btn-danger btn-link" id="productCat">
                         <option id="fragranceOpt">Fragrance</option>
                         <option id="skincareOpt">Skincare</option>
                         <option id="haircareOpt">Haircare</option>
@@ -521,7 +375,7 @@
                 <div class="form-group"><h2>Fragrance: Product Specific Information</h2></div>
                   <div class="form-group">
                     <label for="fragranceCat">FRAGRANCE CATEGORY</label>
-                    <select class="form-control" data-style="btn btn-sm btn-primary btn-link" id="exampleFormControlSelect1">
+                    <select class="form-control" data-style="btn btn-sm btn-danger btn-link" id="exampleFormControlSelect1">
                       <option>Fragrance Mist</option>
                       <option>Eau De Parfum (EDP)</option>
                       <option>Eau De Toilette (EDT)</option>
@@ -692,7 +546,7 @@
                       <div class="input-group">
                           <input type="text" class="form-control inputFileVisible" placeholder="Add Main Image">
                           <span class="input-group-btn">
-                              <button type="button" class="btn btn-fab btn-round btn-primary">
+                              <button type="button" class="btn btn-fab btn-round btn-danger">
                                   <i class="material-icons">attach_file</i>
                               </button>
                           </span>
@@ -705,7 +559,7 @@
                       <div class="input-group">
                           <input type="text" class="form-control inputFileVisible" placeholder="Add image 1">
                           <span class="input-group-btn">
-                              <button type="button" class="btn btn-fab btn-round btn-primary">
+                              <button type="button" class="btn btn-fab btn-round btn-danger">
                                   <i class="material-icons">attach_file</i>
                               </button>
                           </span>
@@ -718,7 +572,7 @@
                       <div class="input-group">
                           <input type="text" class="form-control inputFileVisible" placeholder="Add image 2">
                           <span class="input-group-btn">
-                              <button type="button" class="btn btn-fab btn-round btn-primary">
+                              <button type="button" class="btn btn-fab btn-round btn-danger">
                                   <i class="material-icons">attach_file</i>
                               </button>
                           </span>
@@ -735,7 +589,7 @@
                 <div class="form-group"><h2>Haircare: Product Specific Information</h2></div>
                 <div class="form-group">
                     <label for="fragranceCat">HAIRCARE PRODUCT CATEGORY</label>
-                    <select class="form-control" data-style="btn btn-sm btn-primary btn-link" id="exampleFormControlSelect1">
+                    <select class="form-control" data-style="btn btn-sm btn-danger btn-link" id="exampleFormControlSelect1">
                       <option>Shampoo</option>
                       <option>Conditioner</option>
                       <option>Gel</option>
@@ -893,7 +747,7 @@
                       <div class="input-group">
                           <input type="text" class="form-control inputFileVisible" placeholder="Add Main Image">
                           <span class="input-group-btn">
-                              <button type="button" class="btn btn-fab btn-round btn-primary">
+                              <button type="button" class="btn btn-fab btn-round btn-danger">
                                   <i class="material-icons">attach_file</i>
                               </button>
                           </span>
@@ -906,7 +760,7 @@
                       <div class="input-group">
                           <input type="text" class="form-control inputFileVisible" placeholder="Add image 1">
                           <span class="input-group-btn">
-                              <button type="button" class="btn btn-fab btn-round btn-primary">
+                              <button type="button" class="btn btn-fab btn-round btn-danger">
                                   <i class="material-icons">attach_file</i>
                               </button>
                           </span>
@@ -919,7 +773,7 @@
                       <div class="input-group">
                           <input type="text" class="form-control inputFileVisible" placeholder="Add image 2">
                           <span class="input-group-btn">
-                              <button type="button" class="btn btn-fab btn-round btn-primary">
+                              <button type="button" class="btn btn-fab btn-round btn-danger">
                                   <i class="material-icons">attach_file</i>
                               </button>
                           </span>
@@ -936,7 +790,7 @@
                 <div class="form-group"><h2>Skincare: Product Specific Information</h2></div>
                 <div class="form-group">
                     <label for="fragranceCat">ADDRESSES SKIN TYPE:</label>
-                    <select class="form-control" data-style="btn btn-sm btn-primary btn-link" id="exampleFormControlSelect1">
+                    <select class="form-control" data-style="btn btn-sm btn-danger btn-link" id="exampleFormControlSelect1">
                       <option>Cleanser</option>
                       <option>Exfoliator</option>
                       <option>Treatment</option>
@@ -1103,16 +957,9 @@
                 </div><br>
                 <div class="row">
                   <div class="col">
-                    <div class="form-group form-file-upload form-file-multiple">
-                      <input type="file" multiple="" class="inputFileHidden">
-                      <div class="input-group">
-                          <input type="text" class="form-control inputFileVisible" placeholder="Add Main Image">
-                          <span class="input-group-btn">
-                              <button type="button" class="btn btn-fab btn-round btn-primary">
-                                  <i class="material-icons">attach_file</i>
-                              </button>
-                          </span>
-                      </div>
+                    <div class="form-group">
+                      <input type="file" class="form-control inputFileVisible" placeholder="Add Main Image">
+                      
                     </div>
                   </div>
                   <div class="col">
@@ -1121,7 +968,7 @@
                       <div class="input-group">
                           <input type="text" class="form-control inputFileVisible" placeholder="Add image 1">
                           <span class="input-group-btn">
-                              <button type="button" class="btn btn-fab btn-round btn-primary">
+                              <button type="button" class="btn btn-fab btn-round btn-danger">
                                   <i class="material-icons">attach_file</i>
                               </button>
                           </span>
@@ -1134,7 +981,7 @@
                       <div class="input-group">
                           <input type="text" class="form-control inputFileVisible" placeholder="Add image 2">
                           <span class="input-group-btn">
-                              <button type="button" class="btn btn-fab btn-round btn-primary">
+                              <button type="button" class="btn btn-fab btn-round btn-danger">
                                   <i class="material-icons">attach_file</i>
                               </button>
                           </span>
@@ -1151,7 +998,7 @@
                 <div class="form-group"><h2>Skincare: Product Specific Information</h2></div>
                 <div class="form-group">
                     <label for="fragranceCat">ADDRESSES SKIN TYPE:</label>
-                    <select class="form-control" data-style="btn btn-sm btn-primary btn-link" id="exampleFormControlSelect1">
+                    <select class="form-control" data-style="btn btn-sm btn-danger btn-link" id="exampleFormControlSelect1">
                       <option>Cleanser</option>
                       <option>Exfoliator</option>
                       <option>Treatment</option>
@@ -1323,7 +1170,7 @@
                       <div class="input-group">
                           <input type="text" class="form-control inputFileVisible" placeholder="Add Main Image">
                           <span class="input-group-btn">
-                              <button type="button" class="btn btn-fab btn-round btn-primary">
+                              <button type="button" class="btn btn-fab btn-round btn-danger">
                                   <i class="material-icons">attach_file</i>
                               </button>
                           </span>
@@ -1336,7 +1183,7 @@
                       <div class="input-group">
                           <input type="text" class="form-control inputFileVisible" placeholder="Add image 1">
                           <span class="input-group-btn">
-                              <button type="button" class="btn btn-fab btn-round btn-primary">
+                              <button type="button" class="btn btn-fab btn-round btn-danger">
                                   <i class="material-icons">attach_file</i>
                               </button>
                           </span>
@@ -1349,7 +1196,7 @@
                       <div class="input-group">
                           <input type="text" class="form-control inputFileVisible" placeholder="Add image 2">
                           <span class="input-group-btn">
-                              <button type="button" class="btn btn-fab btn-round btn-primary">
+                              <button type="button" class="btn btn-fab btn-round btn-danger">
                                   <i class="material-icons">attach_file</i>
                               </button>
                           </span>
@@ -1373,7 +1220,7 @@
                   <div class="col">
                     <div class="form-group">
                       <label for="exampleFormControlSelect1">PRODUCT CATEGORY</label>
-                      <select class="form-control" data-style="btn btn-sm btn-primary btn-link" id="exampleFormControlSelect1">
+                      <select class="form-control" data-style="btn btn-sm btn-danger btn-link" id="exampleFormControlSelect1">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -1435,7 +1282,7 @@
                 <div class="form-group">
                   <label for="producting">PRODUCT INGREDIENTS: </label>
                   <textarea class="form-control" name="producting" id="producting" rows="10"></textarea>
-                  <button class="btn btn-primary btn-sm">CHECK VALIDITY</button>
+                  <button class="btn btn-danger btn-sm">CHECK VALIDITY</button>
                 </div>
                 <div class="form-group">
                   <label for="images">PRODUCT IMAGES: </label>
@@ -1447,7 +1294,7 @@
                       <div class="input-group">
                           <input type="text" class="form-control inputFileVisible" placeholder="Add Main Image">
                           <span class="input-group-btn">
-                              <button type="button" class="btn btn-fab btn-round btn-primary">
+                              <button type="button" class="btn btn-fab btn-round btn-danger">
                                   <i class="material-icons">attach_file</i>
                               </button>
                           </span>
@@ -1460,7 +1307,7 @@
                       <div class="input-group">
                           <input type="text" class="form-control inputFileVisible" placeholder="Add image 1">
                           <span class="input-group-btn">
-                              <button type="button" class="btn btn-fab btn-round btn-primary">
+                              <button type="button" class="btn btn-fab btn-round btn-danger">
                                   <i class="material-icons">attach_file</i>
                               </button>
                           </span>
@@ -1473,7 +1320,7 @@
                       <div class="input-group">
                           <input type="text" class="form-control inputFileVisible" placeholder="Add image 2">
                           <span class="input-group-btn">
-                              <button type="button" class="btn btn-fab btn-round btn-primary">
+                              <button type="button" class="btn btn-fab btn-round btn-danger">
                                   <i class="material-icons">attach_file</i>
                               </button>
                           </span>
@@ -1486,7 +1333,7 @@
                       <div class="input-group">
                           <input type="text" class="form-control inputFileVisible" placeholder="Add image 3">
                           <span class="input-group-btn">
-                              <button type="button" class="btn btn-fab btn-round btn-primary">
+                              <button type="button" class="btn btn-fab btn-round btn-danger">
                                   <i class="material-icons">attach_file</i>
                               </button>
                           </span>
@@ -1499,7 +1346,7 @@
                       <div class="input-group">
                           <input type="text" class="form-control inputFileVisible" placeholder="Add image 4">
                           <span class="input-group-btn">
-                              <button type="button" class="btn btn-fab btn-round btn-primary">
+                              <button type="button" class="btn btn-fab btn-round btn-danger">
                                   <i class="material-icons">attach_file</i>
                               </button>
                           </span>
@@ -1512,7 +1359,7 @@
                       <div class="input-group">
                           <input type="text" class="form-control inputFileVisible" placeholder="Add image 5">
                           <span class="input-group-btn">
-                              <button type="button" class="btn btn-fab btn-round btn-primary">
+                              <button type="button" class="btn btn-fab btn-round btn-danger">
                                   <i class="material-icons">attach_file</i>
                               </button>
                           </span>
@@ -1524,7 +1371,7 @@
 
               <!-- Form buttons -->
               <div class="form-group">
-                <button type="submit" class="btn btn-primary" name="addprodbtn">ADD PRODUCT</button>
+                <button type="submit" class="btn btn-danger" name="addprodbtn">ADD PRODUCT</button>
               </div>
             </form>
           </div>

@@ -26,10 +26,7 @@
               </li>
               <br>
               <li>
-                &copy;
-                <script>
-                  document.write(new Date().getFullYear())
-                </script>, made with <i class="material-icons">favorite</i> by Kat.
+                &copy; 2021 FINAL YEAR PROJECT made with <i class="material-icons">favorite</i> by Kat.
               </li>
             </ul>
           </nav>
