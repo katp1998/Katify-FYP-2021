@@ -11,20 +11,22 @@ mpFaceMesh = mp.solutions.face_mesh
 face_mesh = mpFaceMesh.FaceMesh()
 
 #getting image
-image = cv2.imread("E:\BeautBeta\IP_application/test3.jpg") #test: cannot add with multiple faces
+image = cv2.imread("E:\BeautBeta\IP_application/test2.jpg") #test: cannot add with multiple faces
 rgb_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB) 
 height, width, _ = image.shape
 
 #process image
 result = face_mesh.process(rgb_image)
 for facialLandmarks in result.multi_face_landmarks:
-    for i in range(0,52):
+    #specific landmarks are detected through the mediapipe library are considered here because not all landmarks are valid
+    landmarks_array = [3, 6, 8, 9, 32, 36, 69, 67, 109, 108, 101, 116, 117, 135, 16, 148, 151, 172, 169, 171, 152, 165, 170, 175, 199, 194, 192, 187, 200, 211, 204, 202, 207, 206, 210, 216, 228, 229, 266, 262, 277, 275, 273, 280, 281, 297, 299, 298, 330, 323, 343, 338, 337, 333, 343, 349, 348, 347, 350, 371, 357, 351, 396, 377, 391, 393, 423, 411, 420, 419, 421, 418, 422, 424, 429, 437, 425, 426, 432, 427, 436, 434, 430, 431, 428, 449, 448, 450, 451, 452]
+    for i in landmarks_array:
         pt =facialLandmarks.landmark[i]
         x = int(pt.x * width)
         y = int(pt.y * height)
         ptcor = (x,y)
-        cv2.circle(image, (x,y), 2, (100,100,0), -1) 
-        #cv2.putText(image, str(i), (x,y), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 2)
+        cv2.circle(image, (x,y), 3, (255,255,255), -1) 
+        #cv2.putText(image, str(i), (x,y), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 2) >> this is to print the number of the landmark
         color_array.append(ptcor)
 
 mean_cor = np.mean(color_array, axis=0)
