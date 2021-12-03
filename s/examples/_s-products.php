@@ -304,7 +304,7 @@
           <div class="tab-pane" id="addproduct">   
             <form id="productForm" action="s-db-interaction.php" method="POST">
               <div id="basic">
-                <div class="form-group"><h2>Basic Product Information</h2></div>
+              <div class="form-group"><h2>Basic Product Information</h2></div>
                 <div class="form-group">
                   <label for="productname">PRODUCT NAME: </label>
                   <input class="form-control" type="text" name="productname">
@@ -996,293 +996,274 @@
               </div>
               <div id="cosmeticsForm">
                 <div class="form-group"><h2>Skincare: Product Specific Information</h2></div>
-                <div class="form-group">
-                    <label for="fragranceCat">ADDRESSES SKIN TYPE:</label>
-                    <select class="form-control" data-style="btn btn-sm btn-danger btn-link" id="exampleFormControlSelect1">
-                      <option>Cleanser</option>
-                      <option>Exfoliator</option>
-                      <option>Treatment</option>
-                      <option>Serum</option>
-                      <option>Face Oil</option>
-                      <option>Sunscreen</option>
-                      <option>Moisturizer</option>
-                      <option>Chemical Peel</option>
-                      <option>Toner</option>
-                      <option>Face Mask</option>
-                      <option>Eye Cream</option>
-                    </select>
-                  </div>
                   <div class="form-group">
-                    <label for="productvolume">PRODUCT CONTENT VOLUME (ml): </label>
-                    <input class="form-control" name="productvolume"type="text">
-                  </div>
-                  <div class="form-group">
-                    <label for="fragnotes">PRODUCT PROPERTIES: </label>
-                    <div class="row">
-                      <div class="col">
-                        <div class="form-group">
-                          <label for="floralchecks">SKIN CONCERNS ADDRESSED:</label>
-                        </div>
-                        <div class="form-check">
-                          <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" value="">Acne and Pores
-                              <span class="form-check-sign">
-                                  <span class="check"></span>
-                              </span>
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" value="">Signs of aging
-                              <span class="form-check-sign">
-                                  <span class="check"></span>
-                              </span>
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" value="">Darkspots
-                              <span class="form-check-sign">
-                                  <span class="check"></span>
-                              </span>
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" value="">Wrinkles and finelines
-                              <span class="form-check-sign">
-                                  <span class="check"></span>
-                              </span>
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" value="">Dullness
-                              <span class="form-check-sign">
-                                  <span class="check"></span>
-                              </span>
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" value="">Redness
-                              <span class="form-check-sign">
-                                  <span class="check"></span>
-                              </span>
-                          </label>
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="form-group">
-                          <label for="freshchecks">PRODUCT AIMS:</label>
-                        </div>
-                        <div class="form-check">
-                          <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" value="">Hydration/Moisturize
-                              <span class="form-check-sign">
-                                  <span class="check"></span>
-                              </span>
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" value="">Fade scars
-                              <span class="form-check-sign">
-                                  <span class="check"></span>
-                              </span>
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" value="">Whitening
-                              <span class="form-check-sign">
-                                  <span class="check"></span>
-                              </span>
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" value="">Skin toning/reduce skin texture
-                              <span class="form-check-sign">
-                                  <span class="check"></span>
-                              </span>
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" value="">All-rounder
-                              <span class="form-check-sign">
-                                  <span class="check"></span>
-                              </span>
-                          </label>
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="form-group">
-                          <label for="warmchecks">OTHER PROPERTIES: </label>
-                        </div>
-                        <div class="form-check">
-                          <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" value="">Gel-based textured
-                              <span class="form-check-sign">
-                                  <span class="check"></span>
-                              </span>
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" value="">Creamy textured
-                              <span class="form-check-sign">
-                                  <span class="check"></span>
-                              </span>
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" value="">lotion textured
-                              <span class="form-check-sign">
-                                  <span class="check"></span>
-                              </span>
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" value="">without fragrance
-                              <span class="form-check-sign">
-                                  <span class="check"></span>
-                              </span>
-                          </label>
-                        </div>
-                      </div>  
-                    </div>
-                  </div><hr>
-                  <div class="form-group">
-                    <label for="producting">PRODUCT INGREDIENTS: </label>
-                    <textarea class="form-control" name="producting" id="producting" rows="10"></textarea>
-                  </div><br>
-                  <div class="form-group">
-                  <label for="images">PRODUCT IMAGES: </label>
-                </div><br>
-                <div class="row">
-                  <div class="col">
-                    <div class="form-group form-file-upload form-file-multiple">
-                      <input type="file" multiple="" class="inputFileHidden">
-                      <div class="input-group">
-                          <input type="text" class="form-control inputFileVisible" placeholder="Add Main Image">
-                          <span class="input-group-btn">
-                              <button type="button" class="btn btn-fab btn-round btn-danger">
-                                  <i class="material-icons">attach_file</i>
-                              </button>
-                          </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="form-group form-file-upload form-file-multiple">
-                      <input type="file" multiple="" class="inputFileHidden">
-                      <div class="input-group">
-                          <input type="text" class="form-control inputFileVisible" placeholder="Add image 1">
-                          <span class="input-group-btn">
-                              <button type="button" class="btn btn-fab btn-round btn-danger">
-                                  <i class="material-icons">attach_file</i>
-                              </button>
-                          </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="form-group form-file-upload form-file-multiple">
-                      <input type="file" multiple="" class="inputFileHidden">
-                      <div class="input-group">
-                          <input type="text" class="form-control inputFileVisible" placeholder="Add image 2">
-                          <span class="input-group-btn">
-                              <button type="button" class="btn btn-fab btn-round btn-danger">
-                                  <i class="material-icons">attach_file</i>
-                              </button>
-                          </span>
-                      </div>
-                    </div>
-                  </div>
-                </div><br>
-                <div class="form-group">
-                  <label for="productprice">PRODUCT PRICE: </label>
-                  <input class="form-control" name="productprice"type="text">
-                </div>
-              </div>
-              <div id="otherForm">
-                <div class="form-group"><h2>Basic Product Information</h2></div>
-                <div class="form-group">
-                  <label for="productname">PRODUCT NAME: </label>
-                  <input class="form-control" type="text" id="productname" placeholder=>
-                </div>
-                
-                <div class="row">
-                  <div class="col">
-                    <div class="form-group">
-                      <label for="exampleFormControlSelect1">PRODUCT CATEGORY</label>
+                      <label for="fragranceCat">ADDRESSES SKIN TYPE:</label>
                       <select class="form-control" data-style="btn btn-sm btn-danger btn-link" id="exampleFormControlSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                        <option>Cleanser</option>
+                        <option>Exfoliator</option>
+                        <option>Treatment</option>
+                        <option>Serum</option>
+                        <option>Face Oil</option>
+                        <option>Sunscreen</option>
+                        <option>Moisturizer</option>
+                        <option>Chemical Peel</option>
+                        <option>Toner</option>
+                        <option>Face Mask</option>
+                        <option>Eye Cream</option>
                       </select>
                     </div>
-                  </div>
-                  <div class="col">
-                    <div class="form-group">
-                      <div><label for="productdescription">GENDER:</label></div>
-                        <div class="form-check form-check-radio form-check-inline">
-                          <label class="form-check-label">
-                          <input class="form-check-input" type="radio" name="gender" id="male" value="make"> Male
-                          <span class="circle">
-                            <span class="check"></span>
-                          </span>
-                          </label>
-                        </div>
-                        <div class="form-check form-check-radio form-check-inline">
-                          <label class="form-check-label">
-                          <input class="form-check-input" type="radio" name="gender" id="female" value="female"> Male
-                          <span class="circle">
-                            <span class="check"></span>
-                          </span>
-                          </label>
-                        </div>
-                        <div class="form-check form-check-radio form-check-inline">
-                          <label class="form-check-label">
-                          <input class="form-check-input" type="radio" name="gender" id="both" value="both"> both
-                          <span class="circle">
-                            <span class="check"></span>
-                          </span>
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-                <div class="row">
-                  <div class="col">
-                    <div class="form-group">
-                      <label for="productbrand">PRODUCT BRAND: </label>
-                      <input class="form-control" name="productbrand"type="text">
-                    </div>
-                  </div>
-                  <div class="col">
                     <div class="form-group">
                       <label for="productvolume">PRODUCT CONTENT VOLUME (ml): </label>
                       <input class="form-control" name="productvolume"type="text">
                     </div>
-                  </div>
-                  <div class="col">
                     <div class="form-group">
-                      <label for="stock">STOCKS AVAILABLE: </label>
-                      <input class="form-control" name="stock"type="text"vplaceholder="No. of products">
+                      <label for="fragnotes">PRODUCT PROPERTIES: </label>
+                      <div class="row">
+                        <div class="col">
+                          <div class="form-group">
+                            <label for="floralchecks">SKIN CONCERNS ADDRESSED:</label>
+                          </div>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="">Acne and Pores
+                                <span class="form-check-sign">
+                                    <span class="check"></span>
+                                </span>
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="">Signs of aging
+                                <span class="form-check-sign">
+                                    <span class="check"></span>
+                                </span>
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="">Darkspots
+                                <span class="form-check-sign">
+                                    <span class="check"></span>
+                                </span>
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="">Wrinkles and finelines
+                                <span class="form-check-sign">
+                                    <span class="check"></span>
+                                </span>
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="">Dullness
+                                <span class="form-check-sign">
+                                    <span class="check"></span>
+                                </span>
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="">Redness
+                                <span class="form-check-sign">
+                                    <span class="check"></span>
+                                </span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-group">
+                            <label for="freshchecks">PRODUCT AIMS:</label>
+                          </div>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="">Hydration/Moisturize
+                                <span class="form-check-sign">
+                                    <span class="check"></span>
+                                </span>
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="">Fade scars
+                                <span class="form-check-sign">
+                                    <span class="check"></span>
+                                </span>
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="">Whitening
+                                <span class="form-check-sign">
+                                    <span class="check"></span>
+                                </span>
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="">Skin toning/reduce skin texture
+                                <span class="form-check-sign">
+                                    <span class="check"></span>
+                                </span>
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="">All-rounder
+                                <span class="form-check-sign">
+                                    <span class="check"></span>
+                                </span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-group">
+                            <label for="warmchecks">OTHER PROPERTIES: </label>
+                          </div>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="">Gel-based textured
+                                <span class="form-check-sign">
+                                    <span class="check"></span>
+                                </span>
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="">Creamy textured
+                                <span class="form-check-sign">
+                                    <span class="check"></span>
+                                </span>
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="">lotion textured
+                                <span class="form-check-sign">
+                                    <span class="check"></span>
+                                </span>
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="">without fragrance
+                                <span class="form-check-sign">
+                                    <span class="check"></span>
+                                </span>
+                            </label>
+                          </div>
+                        </div>  
+                      </div>
+                    </div><hr>
+                    <div class="form-group">
+                      <label for="producting">PRODUCT INGREDIENTS: </label>
+                      <textarea class="form-control" name="producting" id="producting" rows="10"></textarea>
+                    </div><br>
+                    <div class="form-group">
+                    <label for="images">PRODUCT IMAGES: </label>
+                  </div><br>
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-group form-file-upload form-file-multiple">
+                        <input type="file" multiple="" class="inputFileHidden">
+                        <div class="input-group">
+                            <input type="text" class="form-control inputFileVisible" placeholder="Add Main Image">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-fab btn-round btn-danger">
+                                    <i class="material-icons">attach_file</i>
+                                </button>
+                            </span>
+                        </div>
+                      </div>
                     </div>
+                    <div class="col">
+                      <div class="form-group form-file-upload form-file-multiple">
+                        <input type="file" multiple="" class="inputFileHidden">
+                        <div class="input-group">
+                            <input type="text" class="form-control inputFileVisible" placeholder="Add image 1">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-fab btn-round btn-danger">
+                                    <i class="material-icons">attach_file</i>
+                                </button>
+                            </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-group form-file-upload form-file-multiple">
+                        <input type="file" multiple="" class="inputFileHidden">
+                        <div class="input-group">
+                            <input type="text" class="form-control inputFileVisible" placeholder="Add image 2">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-fab btn-round btn-danger">
+                                    <i class="material-icons">attach_file</i>
+                                </button>
+                            </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div><br>
+                  <div class="form-group">
+                    <label for="productprice">PRODUCT PRICE: </label>
+                    <input class="form-control" name="productprice"type="text">
                   </div>
+              </div>
+              <div id="CosmeticsForm">
+                <div class="form-group"><h2>Cosmetics: Product Specific Information</h2></div>
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">COSMETICS CATEGORY</label>
+                  <select class="form-control" data-style="btn btn-sm btn-danger btn-link" id="exampleFormControlSelect1">
+                    <option>Make-up Foundation</option>
+                    <option>Make-up Powder</option>
+                    <option>Eyeshadow</option>
+                    <option>Mascara or eyeliner</option>
+                    <option>Lpstick</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="productvolume">PRODUCT CONTENT VOLUME (ml): </label>
+                  <input class="form-control" name="productvolume"type="text">
+                </div>
+                <div class="form-group">
+                  <label for="productbrand">PLEASE SELECT THE SKIN TONE THE PRODUCT MATCHES: 
+                    <button type="button" rel="tooltip" tdata-toggle="popover" title="-Categorization for Lipsticks and Eyeshadows-
+                    Porcelain - Ivory (Cool Tones): Blue, Green, Purple. 
+                    Warm Ivory - Warm Beige to Natural (Neutral tones): All colors. 
+                    Honey - Almond to Expresso (Warm tones): Gold, Orange, Reds" class="btn btn-info btn-link btn-sm" >
+                      <i class="material-icons">edit</i></button>
+                  </label>             
+                <div class="form-group">
+                  <input type="radio" class="btn-check" name="color_categories" id="cat_1" autocomplete="off" >
+                  <label class="btn btn-secondary" style="background-color: #f4d4bb;" for="cat_1">Porcelain</label>
+
+                  <input type="radio" class="btn-check" name="color_categories" id="cat_2" autocomplete="off" >
+                  <label class="btn btn-secondary" style="background-color: #efcfa9;" for="cat_2">Ivory</label> 
+
+                  <input type="radio" class="btn-check" name="color_categories" id="cat_3" autocomplete="off" >
+                  <label class="btn btn-secondary" style="background-color: #f2c490;" for="cat_3">Warm Ivory to Sand</label>
+
+                  <input type="radio" class="btn-check" name="color_categories" id="cat_4" autocomplete="off" >
+                  <label class="btn btn-secondary" style="background-color: #e5ca9b;" for="cat_4">Beige</label>
+
+                  <input type="radio" class="btn-check" name="color_categories" id="cat_5" autocomplete="off" >
+                  <label class="btn btn-secondary" style="background-color: #deb37e;" for="cat_5">Warm Beige to Natural</label>
+
+                  <input type="radio" class="btn-check" name="color_categories" id="cat_6" autocomplete="off" >
+                  <label class="btn btn-secondary" style="background-color: #d19556;" for="cat_6">Honey</label>
+
+                  <input type="radio" class="btn-check" name="color_categories" id="cat_7" autocomplete="off" >
+                  <label class="btn btn-secondary" style="background-color: #c7924e;" for="cat_7">Golden </label>
+
+                  <input type="radio" class="btn-check" name="color_categories" id="cat_8" autocomplete="off" >
+                  <label class="btn btn-secondary btn-danger" style="background-color: #855227; font: white;" for="cat_8">Almond to Expresso</label>
+
+                  <input type="radio" class="btn-check" name="color_categories" id="cat_9" autocomplete="off" >
+                  <label class="btn btn-danger" for="cat_9">All skin colors</label>
                 </div>
                 <div class="form-group">
                   <label for="producting">PRODUCT INGREDIENTS: </label>
                   <textarea class="form-control" name="producting" id="producting" rows="10"></textarea>
-                  <button class="btn btn-danger btn-sm">CHECK VALIDITY</button>
                 </div>
                 <div class="form-group">
                   <label for="images">PRODUCT IMAGES: </label>
@@ -1332,32 +1313,6 @@
                       <input type="file" multiple="" class="inputFileHidden">
                       <div class="input-group">
                           <input type="text" class="form-control inputFileVisible" placeholder="Add image 3">
-                          <span class="input-group-btn">
-                              <button type="button" class="btn btn-fab btn-round btn-danger">
-                                  <i class="material-icons">attach_file</i>
-                              </button>
-                          </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="form-group form-file-upload form-file-multiple">
-                      <input type="file" multiple="" class="inputFileHidden">
-                      <div class="input-group">
-                          <input type="text" class="form-control inputFileVisible" placeholder="Add image 4">
-                          <span class="input-group-btn">
-                              <button type="button" class="btn btn-fab btn-round btn-danger">
-                                  <i class="material-icons">attach_file</i>
-                              </button>
-                          </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="form-group form-file-upload form-file-multiple">
-                      <input type="file" multiple="" class="inputFileHidden">
-                      <div class="input-group">
-                          <input type="text" class="form-control inputFileVisible" placeholder="Add image 5">
                           <span class="input-group-btn">
                               <button type="button" class="btn btn-fab btn-round btn-danger">
                                   <i class="material-icons">attach_file</i>
