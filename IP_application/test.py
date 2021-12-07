@@ -11,21 +11,9 @@ mpFaceMesh = mp.solutions.face_mesh
 face_mesh = mpFaceMesh.FaceMesh()
 
 #getting image
-image = cv2.imread("D:\Xampp\htdocs\Katify\IP_application/test3.jpg") #test: cannot add with multiple faces
+image = cv2.imread("D:\Xampp\htdocs\Katify\IP_application/test6.jpg") #test: cannot add with multiple faces
 rgb_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB) 
 height, width, _ = image.shape
-
-#defining the colour boundaries
-colour_categories = [
-    ([244,212,187], [239, 207, 169]), #cat 1 - porcelaine
-    ([239, 207, 169], [242, 196, 144]), #cat 2 - ivory
-    ([242, 196, 144], [229, 202, 155]), #cat 3 - warm ivory and sand
-    ([229, 202, 155], [222, 179, 126]), #cat 4 - beige
-    ([222, 179, 126], [209, 149, 86]), #cat 5 - warm beige and natural
-    ([209, 149, 86], [199, 146, 78]), #cat 6 - honey
-    ([199, 146, 78], [189, 128, 73]), #cat 7 - golden
-    ([189, 128, 73], [133, 82, 39]) #cat 8 - almond chestnut and expresso
-]
 
 #process image
 result = face_mesh.process(rgb_image)
@@ -42,7 +30,21 @@ for facialLandmarks in result.multi_face_landmarks:
         color_array.append(ptcor)
 
 mean_cor = np.mean(color_array, axis=0)
-print(mean_cor)        
+
+#defining the colour boundaries
+TARGET_COLORS = {"porcelain": (244,212,187), "ivory": (239, 207, 169), "warm ivory and sand": (242, 196, 144), "beige": (229, 202, 155), "warm beige and natural": (222, 179, 126),
+ "honey": (209, 149, 86), "golden": (199, 146, 78), "almond chestnut and expresso": (189, 128, 73)}
+
+def color_difference (color1, color2):
+    return sum([abs(component1-component2) for component1, component2 in zip(color1, color2)])
+
+differences = [[color_difference(mean_cor, target_cat), cat_name] for cat_name, target_cat in TARGET_COLORS.items()]
+differences.sort()  # sorted by the first element of inner lists
+color_cat = differences[0][1]
+
+print(color_cat)
+
+#print(mean_cor)        
 cv2.imshow("Image", image)
 cv2.waitKey(0)
 
