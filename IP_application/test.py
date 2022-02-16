@@ -45,8 +45,7 @@ color_cat = differences[0][1]
 print(color_cat)
 
 #print(mean_cor)        
-cv2.imshow("Image", image)
-cv2.waitKey(0)
+#cv2.imshow("Image", image)
+#cv2.waitKey(0)
 
-#looping over the bounda
 
